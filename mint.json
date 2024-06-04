@@ -1,15 +1,15 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Smithy",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#10b981",
+    "light": "#10b981",
+    "dark": "#10b981",
     "anchors": {
       "from": "#0D9373",
       "to": "#07C983"
@@ -33,11 +33,6 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
       "name": "Community",
       "icon": "slack",
       "url": "https://mintlify.com/community"
@@ -54,11 +49,12 @@
       "pages": [
         "introduction",
         "quickstart",
-        "development"
+        "development",
+        "writing-pipelines"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Components",
       "pages": [
         "essentials/markdown",
         "essentials/code",
@@ -70,9 +66,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
+      "pages": ["api-reference/introduction"]
     },
     {
       "group": "Endpoint Examples",
@@ -84,8 +78,7 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "github": "https://github.com/ocurity",
+    "linkedin": "https://www.linkedin.com/company/ocurity"
   }
 }
