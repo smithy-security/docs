@@ -62,7 +62,7 @@ as follows:
 helm upgrade \
   --install \
   --namespace dracon \
-  --version 0.15.0 \
+  --version 0.19.0 \
   dracon-oss-components \
   oci://ghcr.io/ocurity/dracon/charts/dracon-oss-components
 ```
