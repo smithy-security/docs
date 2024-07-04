@@ -12,7 +12,7 @@ One good example of such a component is the [producers/ossf-scorecard component]
 
 In the below `Dockerfile` we using a custom base image and then are further configuring that.
 
-```text title="dracon/components/producers/ossf-scorecard/Dockerfile"
+```docker title="dracon/components/producers/ossf-scorecard/Dockerfile"
 ARG OSSF_SCORECARD_SAFETY_BASE_IMAGE
 FROM gcr.io/openssf/scorecard:stable
 
@@ -25,7 +25,7 @@ ENTRYPOINT ["/scorecard"]
 
 In addition, a `Makefile` is placed inside the component folder, to advice Smithy on how to build the component image.
 
-```bash title="dracon/components/producers/ossf-scorecard/Makefile"
+```makefile title="dracon/components/producers/ossf-scorecard/Makefile"
 .PHONY: component publish
 
 CONTAINER_REPO=
