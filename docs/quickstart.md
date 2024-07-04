@@ -4,9 +4,9 @@ description: 'From Zero to Pipeline in Under 7 Minutes'
 sidebar_position: 1
 ---
 
-This guide will help to quickly setup Dracon on a Kubernetes cluster and get a
-pipeline running. The first step is to create a dev Kubernetes cluster in order
-to deploy Tekton. We suggest you use KiND to provision a local test cluster
+This guide will help to quickly set up Dracon on a Kubernetes cluster and get a
+pipeline running. The first step is to create a dev Kubernetes cluster to deploy Tekton.
+We suggest you use KiND to provision a local test cluster
 quickly. If you already have a K8s cluster then you can skip directly to the
 [Deploying Dracon dependencies](#2-deploying-dracon-dependencies) section.
 
@@ -23,7 +23,7 @@ You will need to have the following tools installed in your system:
 ## Installation
 ### 1. Setting up a [KinD](https://kind.sigs.k8s.io/) cluster
 
-KinD is is a tool for running local Kubernetes clusters using Docker container
+KinD is a tool for running local Kubernetes clusters using Docker container
 “nodes”. You can create a cluster with the following command:
 
 ```bash
@@ -35,11 +35,11 @@ KinD is is a tool for running local Kubernetes clusters using Docker container
 Next, you will need to deploy a bunch of dependencies that Dracon can't work without. You can do this by running the following command:
 
 ```bash
-make dev-deploy DRACON_VERSION=v0.15.0
+make dev-deploy DRACON_VERSION=v0.19.0
 ```
 
 This will deploy various components to your cluster, such as the Elastic Operator and the Dracon Helm package. Depending on the capabilities of your workstation this will probably
-take a couple of minutes. It's perfect time to go get a cup of coffee! 😉
+take a couple of minutes. It's the perfect time to go get a cup of coffee! 😉
 
 ```text
    )  (
