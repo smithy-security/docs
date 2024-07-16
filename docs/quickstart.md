@@ -30,9 +30,19 @@ KinD is a tool for running local Kubernetes clusters using Docker container
 ./scripts/kind-with-registry.sh
 ```
 
-### 2. Deploying Dracon Dependencies
+### 2. Build Images
+To build and publish all dependency images locally, run the following command.
 
-Next, you will need to deploy a bunch of dependencies that Dracon can't work without. You can do this by running the following command:
+```bash
+make publish-containers CONTAINER_REPO=localhost:5000/ocurity/dracon DRACON_VERSION=v0.19.0
+```
+
+### 3. Deploying Dracon Dependencies
+
+Next, you will need to deploy a bunch of dependencies that Dracon can't work without. You can do this by running the following command.
+
+> **NOTE**: This will most likely fail the first time you run it. That's fine.
+> Keep an eye on the Postgres pod. When it's running, re-run the below command.
 
 ```bash
 make dev-deploy DRACON_VERSION=v0.19.0
@@ -53,7 +63,7 @@ take a couple of minutes. It's the perfect time to go get a cup of coffee! 😉
 
 
 
-### 3. Deploy Dracon Components
+### 4. Deploy Dracon Components
 
 Next, we need to install some components. Our components can be easily installed
 as follows:
@@ -71,7 +81,7 @@ And that's it! Dracon is now up and running on your cluster and you can start us
 
 # Running a Pipeline
 
-That's what we're actually here for. Let's run a pipeline. We can do this by
+That's what we're here for. Let's run a pipeline. We can do this by
 using one of the example pipelines included in the repository.
 
 Let's choose the Go pipeline as an example. You can deploy the pipeline as follows:
