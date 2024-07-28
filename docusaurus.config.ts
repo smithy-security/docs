@@ -103,16 +103,8 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/smithy",
-            },
-            {
               label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              href: "https://discord.gg/zDUQRhtxhn",
             },
           ],
         },
