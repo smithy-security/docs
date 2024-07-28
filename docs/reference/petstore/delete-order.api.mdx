@@ -1,0 +1,114 @@
+---
+id: delete-order
+title: "Delete purchase order by ID"
+description: "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors"
+sidebar_label: "Delete purchase order by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVU1v5DYM/SssL7sBHHvygR6MHho0KTDooll0sociGSw0Nj0WYktaiY7XO/B/LyjbyTQpWuypJ8sSKfI9kY8HZLUPmN9jYOsJtwmWFAqvHWtrMMdfrYcn1egSPAVnTSBgP4A2THvysL4O0GuuxaYj+AnOVqtVCldm4FqbPaidfaK4CdaDsWZ2FK+mgT0Z8ooJrj6ugby3PmCC1smmtmZdYo4lNcR060vymKBTXrXE5CXpAxrVEuZo5XRdYoJaknaKa3yNZH0NtgKuCaI1cK0YDFEZgC3sCKZAcomnL532VGLOvqMEQ1FTqzA/IA9O4s0oMMHK+lbxtPXjJY7jVtwnpoJ4XK5W8nmVi5k4XV9D6JxrNJU4Jni5unxrG5GDsQyV7UyJ45hgS1zbF3IiL1xjjll8xiwizA4zLSMmGMg/LaR1vsEca2YX8ixzxNHpIg292u/Jp9pmyuns6QIFTaCi85qHjZAwYVpcPqtOoj7TYuX/XFhpbB8tdesaXWiWtRxar7/Fp/303znE27LFS0CGwropg95rplzcMMfWlroaQP5AGxhs50EVhe0Mx8dU5WIp6+k8boyjkKmc/vxIwxEO5fRvNGCylNdiMZdXTUqKUXy1qWx01NyI5WZKHz7OgOAUbh0ZKe+L9OxNTd7VOoAOoCCo1jUkfrCJjpv4YLBTgUqwJhbu0VUQHBW60kVkMwX403ZQKAOVNiXYjqGVW9TOdvxglrQUw/3C+QvT2/dv905SWE9Buda+BM1zTy5N5IghQkygp3dPBKHXXNRUSjeJQUlB7yUfHxiUc96qov7hwSyJGttDTY2DLoBunRehED8B2NfENXnQ/C7AboBWPYqaFLUyewovESptdExKc6CmEo2ZzwpbUvpg7qTJezUkk0qxbmO+MYHXQbWZ9ahJQJkS6KuzgSDYlhbQhnqoSHHnKZba7dXmIn0wD2YjRl2gqmug0eYx5A/mFO7v6uMn9eRs0Gz98ML4XnPd7dLCtgv5p9J7y3ppjJPn64LtfDElfIS/EuTHwb47QrZr7C5rVWDyWfBF1iptMk9TvJBZR0Y5nQ6qbU4wQSbfhttKylQXNPfy30ooiyYZJlhYw6qIIkCt0s3UUkyq/fnFXASw0QWZQGI4t96VU0VNcJ6uMDkSrjzL+r5PVTxNrd9ns2vIPqx/ufl9c3N6nq7SmttG7hXpmzruLF2lZ2ey52zgVpmjWNdRTMF1vqhVWObEboD19evOPURMZPh/GpGzUDF95cw1ShtBFOk5zKNgmejJNBwxwXyZktsEaxtYbA4HEZhPvhlH2f7SkR8wv98m+KS8VjsRtfsDljrIusS8Uk2gfyHj/R/z7DyB7xi4/whnEWMjwhvJwxwxwajVzyN/3B7Pw+ubDzd3NziOfwGqsRBI
+sidebar_class_name: "delete api-method"
+info_path: docs/reference/petstore/swagger-petstore-openapi-3-1
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete purchase order by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/store/order/{orderId}"}
+>
+  
+</MethodEndpoint>
+
+
+
+For valid response try integer IDs with value &lt; 1000. Anything above 1000 or nonintegers will generate API errors
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"orderId","in":"path","description":"ID of the order that needs to be deleted","required":true,"schema":{"type":"integer","format":"int64"}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Invalid ID supplied
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Order not found
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      
