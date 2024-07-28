@@ -2,7 +2,6 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Heading from "@theme/Heading";
 
 import styles from "./index.module.css";
@@ -29,6 +28,24 @@ function HomepageHeader() {
   );
 }
 
+function DocsGroup({ title, description, href }) {
+  return (
+    <article className="col col--6 margin-bottom--lg">
+      <a
+        className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module"
+        href={href}
+      >
+        <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module">
+          {title}
+        </h2>
+        <p className=" cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module">
+          {description}
+        </p>
+      </a>
+    </article>
+  );
+}
+
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -37,8 +54,36 @@ export default function Home(): JSX.Element {
       description="The official documentation for all things Smithy."
     >
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      <main
+        style={{
+          margin: "0 auto",
+          maxWidth: "768px",
+          padding: "var(--ifm-spacing-vertical) var(--ifm-spacing-horizontal)",
+          width: "100%",
+        }}
+      >
+        <section className="row margin-top--lg">
+          <DocsGroup
+            title="Tutorials"
+            description="Learning: Learn how Smithy works by doing something meaningful."
+            href="/docs/category/tutorials"
+          />
+          <DocsGroup
+            title="How-Tos"
+            description="Goals: Get something specific done, correctly and safely."
+            href="/docs/category/how-tos"
+          />
+          <DocsGroup
+            title="Explanation"
+            description="Understanding: Deepen and broaden your understanding of Smithy."
+            href="/docs/category/explanation"
+          />
+          <DocsGroup
+            title="Reference"
+            description="Information: Technical descriptions of the machinery and how to operate it."
+            href="/docs/category/reference"
+          />
+        </section>
       </main>
     </Layout>
   );
