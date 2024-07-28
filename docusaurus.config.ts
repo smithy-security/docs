@@ -48,10 +48,24 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Tutorials",
+          to: "/docs/category/tutorials",
+        },
+        {
+          position: "left",
+          label: "How-Tos",
+          to: "/docs/category/how-tos",
+        },
+        {
+          position: "left",
+          label: "Explanation",
+          to: "/docs/category/explanation",
+        },
+        {
+          position: "left",
+          label: "Reference",
+          to: "/docs/category/reference",
         },
         {
           href: "https://github.com/ocurity/docs",
@@ -66,8 +80,20 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/quickstart",
+              label: "Tutorials",
+              to: "/docs/category/tutorials",
+            },
+            {
+              label: "How-Tos",
+              to: "/docs/category/how-tos",
+            },
+            {
+              label: "Explanation",
+              to: "/docs/category/explanation",
+            },
+            {
+              label: "Reference",
+              to: "/docs/category/reference",
             },
           ],
         },
