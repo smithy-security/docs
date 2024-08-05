@@ -36,7 +36,7 @@ Already have a local Kubernetes cluster? Skip ahead to the next step!
 Next, we need to deploy Dracon into our cluster. You can do this by running the following command:
 
 ```bash
-make dev-deploy DRACON_VERSION=v0.19.0
+make dev-deploy DRACON_VERSION=v0.27.0
 ```
 
 This will deploy various things to your cluster: Dracon itself, but also supporting tools, such as Elastic Search. Running this command might take a couple of minutes. It's the perfect time to go get a cup of coffee! 😉
@@ -59,7 +59,7 @@ Next, we need to install some components. Components are the basic building bloc
 helm upgrade \
   --install \
   --namespace dracon \
-  --version 0.19.0 \
+  --version 0.27.0 \
   dracon-oss-components \
   oci://ghcr.io/ocurity/dracon/charts/dracon-oss-components
 ```
