@@ -17,51 +17,19 @@ You will need to have the following tools installed in your system:
 
 ## Installation
 
-### Create a Kubernetes Cluster
+There are two main ways to run Dracon: Either you install the latest release, or you build it from the source.
+For both options you'll just need to run a single command.
 
-Dracon requires a Kubernetes cluster to run in. We will use [KinD](https://kind.sigs.k8s.io/) to create one. Just run:
-
-```bash
-./scripts/kind-with-registry.sh
-```
-
-:::tip
-
-Already have a local Kubernetes cluster? Skip ahead to the next step!
-
-:::
-
-### Deploy Dracon
-
-Next, we need to deploy Dracon into our cluster. You can do this by running the following command:
+### Option 1: Install Latest Release
 
 ```bash
-make dev-deploy DRACON_VERSION=v0.19.0
+make install
 ```
 
-This will deploy various things to your cluster: Dracon itself, but also supporting tools, such as Elastic Search. Running this command might take a couple of minutes. It's the perfect time to go get a cup of coffee! 😉
-
-```text
-   )  (
-  (   ) )
-   ) ( (
-  -------
-.-\     /
-'- \   /
-  _______
-```
-
-### Deploy Dracon Components
-
-Next, we need to install some components. Components are the basic building blocks of Dracon. They can be easily installed as follows:
+### Option 2: Build from Source
 
 ```bash
-helm upgrade \
-  --install \
-  --namespace dracon \
-  --version 0.19.0 \
-  dracon-oss-components \
-  oci://ghcr.io/ocurity/dracon/charts/dracon-oss-components
+make dev-deploy
 ```
 
 And that's it! Dracon is now up and running on your cluster and you can start using it.
