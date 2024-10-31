@@ -127,6 +127,7 @@ button,
   flex-shrink: 1;
 }
 .navbar__title {
+  color: var(--ifm-color-primary);
   width: 50px;
 }
 .navbar__link {
