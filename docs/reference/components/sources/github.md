@@ -1,3 +1,7 @@
+---
+sidebar_custom_props:
+  icon: "/img/components/git.svg"
+---
 # Git Clone Source Component
 
 This component lets Smithy clone a repository from GitHub.

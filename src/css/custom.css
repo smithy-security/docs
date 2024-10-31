@@ -155,3 +155,17 @@ button,
   text-overflow: unset !important;
   white-space: wrap !important;
 }
+.card-header {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+.card-icon {
+  max-height: 24px;
+  max-width: 24px;
+}
+.card-description {
+  &:hover {
+    text-decoration: none;
+  }
+}
