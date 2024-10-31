@@ -5,7 +5,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: "Smithy Docs",
-  tagline: "Focus on the important stuff.",
+  tagline: "Documentation for the Smithy Security platform.",
   favicon: "img/favicon.png",
 
   url: "https://docs.smithy.security",
