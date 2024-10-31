@@ -21,7 +21,6 @@
   --ifm-footer-title-color: var(--ifm-color-white);
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: #fffcf5;
-  --ifm-heading-color: #3a352b;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -39,7 +38,6 @@ html[data-theme='dark'] {
   --ifm-color-emphasis-300: #1f1c19;
   --ifm-color-emphasis-200: #1f1c19;
   --ifm-toc-border-color: #1f1c19;
-  --ifm-heading-color: var(--ifm-font-color-base);
 }
 
 /* Global fonts */
@@ -144,4 +142,12 @@ button,
 .footer__copyright {
   margin-top: 50px;
   font-size: 0.5rem;
+}
+
+/**card styles*/
+.card > h2 {
+  overflow: initial !important;
+  text-overflow: unset !important;
+  white-space: wrap !important;
+  font-size: 1rem;
 }

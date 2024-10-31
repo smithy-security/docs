@@ -35,10 +35,10 @@ function DocsGroup({ title, description, href }) {
         className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module"
         href={href}
       >
-        <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module">
+        <h2 className="cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module">
           {title}
         </h2>
-        <p className=" cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module">
+        <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module">
           {description}
         </p>
       </a>
@@ -57,7 +57,7 @@ export default function Home(): JSX.Element {
       <main
         style={{
           margin: "0 auto",
-          maxWidth: "768px",
+          maxWidth: "767px",
           padding: "var(--ifm-spacing-vertical) var(--ifm-spacing-horizontal)",
           width: "100%",
         }}
