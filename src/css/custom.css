@@ -6,6 +6,9 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f1ede4;
+  --ifm-code-font-size: 95%;
   --ifm-color-primary: #f65f1e;
   --ifm-color-primary-dark: #e35200;
   --ifm-color-primary-darker: #d64d00;
@@ -13,18 +16,21 @@
   --ifm-color-primary-light: #ff6a16;
   --ifm-color-primary-lighter: #ff7223;
   --ifm-color-primary-lightest: #ff8a49;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-color-base: #2b2722;
   --ifm-footer-background-color: #2b2722;
   --ifm-footer-color: var(--ifm-footer-link-color);
   --ifm-footer-link-color: var(--ifm-color-secondary);
   --ifm-footer-title-color: var(--ifm-color-white);
-  --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #fffcf5;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-hover-overlay: #fbf7f1;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 html[data-theme='dark'] {
+  --ifm-background-color: #3a352b;
+  --ifm-background-surface-color: #3a352b;
+  --ifm-color-emphasis-200: #1f1c19;
+  --ifm-color-emphasis-300: #1f1c19;
   --ifm-color-primary: #fc5b00;
   --ifm-color-primary-dark: #e35200;
   --ifm-color-primary-darker: #d64d00;
@@ -32,11 +38,8 @@ html[data-theme='dark'] {
   --ifm-color-primary-light: #ff6a16;
   --ifm-color-primary-lighter: #ff7223;
   --ifm-color-primary-lightest: #ff8a49;
+  --ifm-font-color-base: #fbf7f1;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-background-color: #3a352b;
-  --ifm-background-surface-color: #3a352b;
-  --ifm-color-emphasis-300: #1f1c19;
-  --ifm-color-emphasis-200: #1f1c19;
   --ifm-toc-border-color: #1f1c19;
 }
 
@@ -128,26 +131,26 @@ button,
 }
 .navbar__link {
   display: flex;
-  justify-content: center;
-  padding-top: 0;
-  padding-bottom: 0;
   height: 13px;
+  justify-content: center;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 /* footer styles*/
 .footer__link-item {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 .footer__copyright {
-  margin-top: 50px;
   font-size: 0.5rem;
+  margin-top: 50px;
 }
 
 /**card styles*/
 .card > h2 {
+  font-size: 1rem;
   overflow: initial !important;
   text-overflow: unset !important;
   white-space: wrap !important;
-  font-size: 1rem;
 }
