@@ -169,3 +169,12 @@ button,
     text-decoration: none;
   }
 }
+
+/*Dark mode component adjustments*/
+html[data-theme='dark'] {
+  .card {
+    .black-img {
+        filter: invert();
+    }
+  }
+}

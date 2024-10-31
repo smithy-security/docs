@@ -33,7 +33,7 @@ function DocsGroup({title, description, href, icon}) {
         <article className="col col--6 margin-bottom--lg">
             <a className="card padding--lg cardContainer_src-theme-DocCard-styles-module" href={href}>
                 <h2 className="text--truncate card-header cardTitle_src-theme-DocCard-styles-module" title={title}><img
-                    src={icon} className="card-icon"/><span>{title}</span></h2><p
+                    src={icon} className="card-icon black-img"/><span>{title}</span></h2><p
                 className="card-description text--truncate cardDescription_src-theme-DocCard-styles-module"
                 title={description}>{description}</p>
             </a>
