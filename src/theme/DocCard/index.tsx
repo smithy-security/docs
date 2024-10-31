@@ -67,14 +67,14 @@ function CardLayout({
     <CardContainer href={href}>
       <Heading
         as="h2"
-        className={clsx('text--truncate card-header', styles.cardTitle)}
+        className={clsx('card-header', styles.cardTitle)}
         title={title}>
         <img src={icon} class="card-icon"/>
         <span>{title}</span>
       </Heading>
       {description && (
           <p
-          className={clsx('card-description text--truncate', styles.cardDescription)}
+          className={clsx('card-description', styles.cardDescription)}
           title={description}>
           {description}
         </p>
