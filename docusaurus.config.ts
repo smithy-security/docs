@@ -49,23 +49,18 @@ const config: Config = {
       items: [
         {
           position: "left",
-          label: "Tutorials",
-          to: "/docs/category/tutorials",
+          label: "OSS",
+          to: "/docs/category/oss",
         },
         {
           position: "left",
-          label: "How-Tos",
-          to: "/docs/category/how-tos",
+          label: "SaaS",
+          to: "/docs/category/saas",
         },
         {
           position: "left",
-          label: "Explanation",
-          to: "/docs/category/explanation",
-        },
-        {
-          position: "left",
-          label: "Reference",
-          to: "/docs/category/reference",
+          label: "Components",
+          to: "/docs/category/reference/components",
         },
         {
           href: "https://github.com/smithy-security/docs",
@@ -80,20 +75,16 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorials",
-              to: "/docs/category/tutorials",
+              label: "OSS",
+              to: "/docs/category/oss",
             },
             {
-              label: "How-Tos",
-              to: "/docs/category/how-tos",
+              label: "SaaS",
+              to: "/docs/category/saas",
             },
             {
-              label: "Explanation",
-              to: "/docs/category/explanation",
-            },
-            {
-              label: "Reference",
-              to: "/docs/category/reference",
+              label: "Components",
+              to: "/docs/category/reference/components",
             },
           ],
         },

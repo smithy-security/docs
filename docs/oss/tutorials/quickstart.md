@@ -63,9 +63,9 @@ kubectl create \
 ```
 
 And that's it! You've just run your first pipeline with Smithy. 🎉
-To see the pipeline running, head to `PipelineRuns` in the Tekton dashboard. You can also [take a look at the Elastic Search dashboard that comes with Smithy to check out the vulnerabilities](/docs/how-tos/elasticsearch) that Smithy found.
+To see the pipeline running, head to `PipelineRuns` in the Tekton dashboard. You can also take a look at the Elastic Search dashboard that comes with Smithy to check out the vulnerabilities that Smithy found.
 
 To learn more, check out these resources:
 
-- [What are pipelines?](/docs/explanation/pipelines)
-- [What are components?](/docs/explanation/components)
+- [What are workflows?](/docs/reference/workflows)
+- [What are instances?](/docs/reference/instances)
