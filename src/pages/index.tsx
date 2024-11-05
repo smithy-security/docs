@@ -15,14 +15,6 @@ function HomepageHeader() {
                     {siteConfig.title}
                 </Heading>
                 <p className="hero__subtitle">{siteConfig.tagline}</p>
-                <div className={styles.buttons}>
-                    <Link
-                        className="button button--secondary"
-                        to="/docs/tutorials/quickstart"
-                    >
-                        Quickstart
-                    </Link>
-                </div>
             </div>
         </header>
     );
@@ -60,21 +52,15 @@ export default function Home(): JSX.Element {
                 <section className="row margin-top--lg">
                     <DocsGroup
                         icon="/img/icons/tutorials.png"
-                        title="Tutorials"
-                        description="Learning: Learn how Smithy works by doing something meaningful."
-                        href="/docs/category/tutorials"
+                        title="SaaS"
+                        description="Learn about the Smithy SaaS"
+                        href="/docs/category/saas"
                     />
                     <DocsGroup
                         icon="/img/icons/how-to.png"
-                        title="How-Tos"
-                        description="Goals: Get something specific done, correctly and safely."
-                        href="/docs/category/how-tos"
-                    />
-                    <DocsGroup
-                        icon="/img/icons/explanation.png"
-                        title="Explanation"
-                        description="Understanding: Deepen and broaden your understanding of Smithy."
-                        href="/docs/category/explanation"
+                        title="OSS"
+                        description="Learn about the Smithy OSS"
+                        href="/docs/category/oss"
                     />
                     <DocsGroup
                         icon="/img/icons/reference.png"
