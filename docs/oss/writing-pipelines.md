@@ -1,6 +1,6 @@
 ---
-title: 'Creating a Pipeline'
-description: 'As Easy As 1, 2, 3... 4?'
+title: 'Creating a Workflow'
+description: 'eezy'
 sidebar_position: 3
 ---
 

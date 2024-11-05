@@ -49,7 +49,12 @@ const config: Config = {
       items: [
         {
           position: "left",
-          label: "OSS",
+          label: "Quickstart",
+          to: "/docs/oss/quickstart",
+        },
+        {
+          position: "left",
+          label: "Open-Source",
           to: "/docs/category/oss",
         },
         {
@@ -60,7 +65,12 @@ const config: Config = {
         {
           position: "left",
           label: "Components",
-          to: "/docs/category/reference/components",
+          to: "/docs/reference/components/all",
+        },
+        {
+          position: "left",
+          label: "Reference",
+          to: "/docs/reference",
         },
         {
           href: "https://github.com/smithy-security/docs",
@@ -75,7 +85,11 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "OSS",
+              label: "Quickstart",
+              to: "/docs/oss/quickstart",
+            },
+            {
+              label: "Open-Source",
               to: "/docs/category/oss",
             },
             {
@@ -84,7 +98,11 @@ const config: Config = {
             },
             {
               label: "Components",
-              to: "/docs/category/reference/components",
+              to: "/docs/reference/components/all",
+            },
+            {
+              label: "Reference",
+              to: "/docs/reference",
             },
           ],
         },
