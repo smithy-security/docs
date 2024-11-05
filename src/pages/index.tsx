@@ -72,9 +72,9 @@ export default function Home(): JSX.Element {
                     />
                     <DocsGroup
                         icon="/img/icons/pencil.png"
-                        title="Write your own component"
-                        description="Write your own integration with Smithy in 5 minutes."
-                        href="/docs/smithy-open-source/write-your-own-component"
+                        title="Write your own pipeline"
+                        description="Write your own pipeline with Smithy in 5 minutes."
+                        href="/docs/oss/writing-pipelines"
                     />
                     <DocsGroup
                         icon="/img/icons/reference.png"

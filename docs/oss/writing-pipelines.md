@@ -1,36 +1,29 @@
 ---
-title: 'Creating a Workflow'
-description: 'eezy'
+title: 'Write your own Pipeline'
+description: "Build your first Smithy Pipeline"
 sidebar_position: 3
 ---
 
-Composing pipelines is easy, it just takes four steps:
+There are several example pipelines in the [/examples folder](https://github.com/smithy-security/smithy/tree/main/examples/pipelines).  
+In this tutorial we are going to create our own one.  
+We assume that you have already completed all steps in the [Installation](http://localhost:3000/docs/oss/installation) tutorial.  
+Check where your smithyctl is, e.g. in `./bin/cmd/linux/amd64/smithyctl`.
 
-1. Write a `kustomization.yaml` file pointing to the components you want to use.
-2. Run `smithyctl pipelines build <path/to/kustomization.yaml>` and redirect the
-   output to a yaml file. This automatically collects all the component yamls to
-   a single templated file.
-3. Write a helm `Chart.yaml` for your pipeline
-4. Write a pipelineRun.yaml providing values for your pipeline
+## Summary 
 
-## Example
+Here is how we are going to create the pipeline:
 
-Let's assume we want to scan a repository, that contains code written in Go.
-Since we are scannign Go it makes sense to also enrich the results by detecting
-duplicates and as a bonus let's also apply a Rego policy.
-We can compose this pipeline by writing the following `kustomization.yaml`
+1. Create a `kustomization.yaml` file pointing to the components that we want to use.
+2. Write a `pipelineRun.yaml` to provide values for the pipeline run.
 
-In the following file:
+## Create the Pipeline
 
-* we tell `smithyctl` that we want the pipeline pods to have the suffix
-  `*-golang-project`
-* it should base everything to the official `task.yaml` and `pipeline.yaml`
-* it should start by running a `git clone` to bring the code in for scanning
-* it should scan the code with the `nancy` and `gosec` components.
-* it should aggregate the scanning results
-* enrich the results by applying policy and deduplicating
-* it should aggregate the enriched results
-* finally `smithyctl` should push results to `mongodb` and `elasticsearch`
+Let's assume that we want to scan a repository, which contains code written in Go.
+Since we are scanning Go it makes sense to also enrich the results by detecting
+duplicates and as a bonus let's also apply a [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/) policy.
+
+#### Write the Kustomization.yaml
+We can compose this pipeline by writing the following `kustomization.yaml` in the smithy repository's folder:
 
 ```yaml
 ---
@@ -38,54 +31,36 @@ In the following file:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 nameSuffix: -go-pipeline
-resources:
-  - ../../../components/base/pipeline.yaml
-  - ../../../components/base/task.yaml
 components:
-  - ../../../components/sources/git
-  - ../../../components/producers/aggregator
-  - ../../../components/producers/golang-gosec
-  - ../../../components/producers/golang-nancy
-  - ../../../components/enrichers/aggregator
-  - ../../../components/enrichers/policy
-  - ../../../components/enrichers/deduplication
-  - ../../../components/consumers/mongodb
-  - ../../../components/consumers/elasticsearch
-
+  - pkg:helm/smithy-security-oss-components/base
+  - pkg:helm/smithy-security-oss-components/git-clone
+  - pkg:helm/smithy-security-oss-components/producer-golang-gosec
+  - pkg:helm/smithy-security-oss-components/producer-golang-nancy
+  - pkg:helm/smithy-security-oss-components/producer-aggregator
+  - pkg:helm/smithy-security-oss-components/enricher-policy
+  - pkg:helm/smithy-security-oss-components/enricher-deduplication
+  - pkg:helm/smithy-security-oss-components/enricher-aggregator
+  - pkg:helm/smithy-security-oss-components/consumer-stdout-json
 ```
+In this file:
+* we tell `smithyctl` that we want the pipeline pods to have the suffix
+  `*-go-pipeline`
+* it should base everything on the base `task.yaml` and `pipeline.yaml`
+* it should start by running a `git clone` to get the code for scanning.
+* it should scan the code with the `nancy` and `gosec` components.
+* it should aggregate the scanning results
+* it should enrich the results by applying policy and deduplicating enrichment
+* it should aggregate the enriched results
+* finally it should return the results as JSON
 
-Then executing `smithyctl pipelines build ./go-pipeline/kustomization.yaml > ./go-pipeline/templates/all.yaml`
-generates a Helm template.
-To make the template into a chart we create the following `Chart.yaml`
-
-```yaml
-# file: ./go-pipeline/Chart.yaml
-apiVersion: v2
-name: "smithy-golang-project"
-description: "A Helm chart for deploying a Smithy pipeline for a Golang project."
-type: "application"
-version: 0.0.1
-appVersion: "0.0.1"
-```
-
-We can manage this chart as any other Helm chart and install it with:
-
-```bash
-helm upgrade go-pipeline ./go-pipeline --install \
-     --set "container_registry=kind-registry:5000/smithy-security/smithy" \
-     --set "smithy_os_component_version=$(make print-SMITHY_VERSION)"
-```
-
-and that's it!
-
-## Running a pipeline
+#### Change the pipeline run parameters
 
 To run a pipeline you need a `pipelinerun.yaml` which binds values to the
-component variables and instructs k8s to run the relevant pipeline.
-For the pipeline above we can use the following `pipelinerun.yaml`
+component variables and instructs k8s to run the relevant pipeline.  
+For our pipeline we can use the following `pipelinerun.yaml`:
 
 ```yaml
-# file: ./go-pipeline/pipelinerun/pipelinerun.yaml
+# file: ./go-pipeline/pipelinerun.yaml
 ---
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
@@ -110,13 +85,49 @@ spec:
             storage: 1Gi
 ```
 
-In this pipelinerun we provide the minimal values required to run the components
-, namely a `git-clone-url` pointing to the repository we want to clone.
+In this pipelinerun we provide the minimal values required to run the components.  
+Namely, a `git-clone-url` pointing to the repository we want to clone.
 You can provide more values and customize the components more by providing the
 relevant values as shown in each component documentation.
 
+## Deploy the Pipeline
+Deploy the pipeline using the address of your smithyctl:
+```
+./bin/cmd/linux/amd64/smithyctl pipelines deploy ./go-pipeline
+
+```
+
+## Run the Pipeline
 This pipelinerun can be triggered with:
-`cat ./go-pipeline/pipelinerun/pipelinerun.yaml | kubectl create -f -`
+```
+kubectl create -n smithy -f ./go-pipeline/pipelinerun.yaml
+```
 
 You can monitor this pipeline's execution either in the Tekton dashboard or
-using `kubectl get po -w`
+using:
+
+```
+kubectl get pods -w -n smithy
+```
+
+That will result in something like:  
+```cgo
+smithy-golang-project-lvdsp-enricher-aggregator-pod      0/2     PodInitializing   0            2s
+smithy-golang-project-lvdsp-enricher-codeowners-pod      0/2     Completed         0            7s
+smithy-golang-project-lvdsp-enricher-aggregator-pod      0/2     Completed         0            4s
+smithy-golang-project-lvdsp-consumer-stdout-json-pod     0/1     PodInitializing   0            1s
+smithy-golang-project-lvdsp-enricher-aggregator-pod      0/2     Completed         0            6s
+smithy-golang-project-lvdsp-enricher-aggregator-pod      0/2     Completed         0            6s
+smithy-golang-project-lvdsp-consumer-stdout-json-pod     1/1     Running           0            2s
+smithy-golang-project-lvdsp-consumer-stdout-json-pod     0/1     Completed         0            4s
+```
+
+## Get Results
+Note the name of the JSON pod when you run `kubectl get pods -w -n smithy`.  
+The results are in that pod's logs.  
+When the Status is "completed", you can get the enriched results with:
+
+```shell
+kubectl -n smithy logs smithy-golang-project-[your-pod-code]-consumer-stdout-json-pod | jq
+```
+

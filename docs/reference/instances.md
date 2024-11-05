@@ -1,5 +1,5 @@
 ---
 title: 'Instances'
-description: 'Run your workflows'
+description: 'Pipeline runs'
 sidebar_position: 1
 ---

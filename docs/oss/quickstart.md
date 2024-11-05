@@ -1,58 +1,15 @@
 ---
 title: "Quickstart"
 description: "Run your first Smithy Workflow"
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Quickstart 
 
-With this tutorial you will quickly install Smithy on a Kubernetes cluster and execute a
-pipeline. 
+With this tutorial we will learn how to execute a Pipeline on Smithy.  
+You will need to [install](http://localhost:3000/docs/oss/installation) Smithy locally first.  
+Check where your smithyctl is, e.g. in `./bin/cmd/linux/amd64/smithyctl`.
 
-## Tools you will need
-
-You will need to install the following tools on your system:
-- [KiND](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
-- [kustomize](https://kubectl.docs.kubernetes.io/installation/kustomize/)
-- [Docker](https://docs.docker.com/engine/install/)
-- [Helm](https://helm.sh/docs/intro/install/)
-- [Go](https://go.dev/doc/install)
-
-### Set up Smithy and its dependencies
-
-1. Clone the Smithy [Open-Source repository](https://github.com/smithy-security/smithy) with 
-```
-git clone git@github.com:smithy-security/smithy.git
-```
-2. Set up Smithy and its dependencies by executing in the folder root:
-```
-make install
-```
-
-This command will:
-* Spin up a Kubernetes cluster in Docker using [KinD](https://kind.sigs.k8s.io/).
-* Deploy Smithy dependencies and Custom Resource Definitions (CRDs).
-  Most of these dependencies are required by the example pipelines:
-    * Elasticsearch
-    * Kibana
-    * Postgres
-
-All the dependencies are built using smithy's current [latest release](https://github.com/smithy-security/smithy/tags).
-
-This will take a while, so we invite you to go and grab a coffee!
-
-```text
-   )  (
-  (   ) )
-   ) ( (
-  -------
-.-\     /
-'- \   /
-  _______
-espresso cup by @ptzianos
-```
-
-
-## Deploying an example pipeline with Smithy
+## Summary
 
 Following the steps below, we'll deploy an example Golang project
 pipeline which will:
@@ -63,17 +20,17 @@ pipeline which will:
 * Enrich the findings with [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) annotation
 * Show the enriched results in JSON format
 
-### Deploy the pipeline
+## Deploy the pipeline
 
 1. Configure the pipeline settings in [/examples/pipelines/golang-project/pipelinerun.yaml](https://github.com/smithy-security/smithy/blob/main/examples/pipelines/golang-project/pipelinerun.yaml). E.g Set the target repository in the `git-clone-url`
    parameter.
-2. Check where your `smithyctl` is, inside the Smithy repository root. It might be in `./bin/cmd/linux/amd64/smithyctl`
-3. Deploy the pipeline with the address of your smithyctl:
+2. Check where your `smithyctl` is, inside the Smithy repository root. If you are using linux, it is in `./bin/cmd/linux/amd64/smithyctl`
+3. Deploy the pipeline using the address of your smithyctl:
 ```
 ./bin/cmd/linux/amd64/smithyctl pipelines deploy ./examples/pipelines/golang-project
 ```
 
-### Execute the pipeline
+## Execute the pipeline
 
 Execute the pipeline with:
 ```
@@ -81,7 +38,7 @@ kubectl create -n smithy -f ./examples/pipelines/golang-project/pipelinerun.yaml
 ```
 You should get a response that the pipeline started, e.g.: `"pipelinerun.tekton.dev/smithy-golang-project-7wf7f created"`
 
-### Look at it go
+## Look at it go
 
 You can follow the progress of the pipeline by checking
 `Pods`, `PipelineRuns` and `TaskRuns` on `smithy`'s namespace.
@@ -130,7 +87,7 @@ smithy-kb-5df6fcb8c7-tsbg6                               1/1     Running     0  
 smithy-postgresql-0                                      1/1     Running     0          25m
 ```
 
-### Get Results
+## Get Results
 Note the name of the JSON pod. The results are in that pod's logs.
 When its Status is completed, you can check the enriched results with:
 
@@ -138,7 +95,7 @@ When its Status is completed, you can check the enriched results with:
 kubectl -n smithy logs smithy-golang-project-[your-pod-code]-consumer-stdout-json-pod | jq
 ```
 
-### Debug
+## Debug
 
 If a task pod does not complete, you can check its logs.
 
