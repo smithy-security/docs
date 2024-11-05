@@ -205,3 +205,12 @@ a.cardContainer_src-theme-DocCard-styles-module:hover {
 [data-theme='dark'] .black-img {
     filter: invert();
 }
+
+/* autocomplete */
+
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header,
+.algolia-autocomplete .algolia-docsearch-suggestion--title {
+  font-family: "MD Nichrome", sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
