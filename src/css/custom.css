@@ -6,23 +6,31 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #fc5b00;
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f1ede4;
+  --ifm-code-font-size: 95%;
+  --ifm-color-primary: #f65f1e;
   --ifm-color-primary-dark: #e35200;
   --ifm-color-primary-darker: #d64d00;
   --ifm-color-primary-darkest: #b04000;
   --ifm-color-primary-light: #ff6a16;
   --ifm-color-primary-lighter: #ff7223;
   --ifm-color-primary-lightest: #ff8a49;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-color-base: #2b2722;
   --ifm-footer-background-color: #2b2722;
   --ifm-footer-color: var(--ifm-footer-link-color);
   --ifm-footer-link-color: var(--ifm-color-secondary);
   --ifm-footer-title-color: var(--ifm-color-white);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-hover-overlay: #fbf7f1;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+html[data-theme='dark'] {
+  --ifm-background-color: #3a352b;
+  --ifm-background-surface-color: #3a352b;
+  --ifm-color-emphasis-200: #1f1c19;
+  --ifm-color-emphasis-300: #1f1c19;
   --ifm-color-primary: #fc5b00;
   --ifm-color-primary-dark: #e35200;
   --ifm-color-primary-darker: #d64d00;
@@ -30,5 +38,143 @@
   --ifm-color-primary-light: #ff6a16;
   --ifm-color-primary-lighter: #ff7223;
   --ifm-color-primary-lightest: #ff8a49;
+  --ifm-font-color-base: #fbf7f1;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-toc-border-color: #1f1c19;
+}
+
+/* Global fonts */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/static/fonts/SchibstedGrotesk/SchibstedGrotesk-VariableFont_wght.ttf)
+  format("truetype");
+}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/static/fonts/SchibstedGrotesk/SchibstedGrotesk-VariableFont_wght.ttf)
+  format("truetype");
+}
+
+/* Header font */
+@font-face {
+  font-family: "MD Nichrome";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/static/fonts/MDNichrome/MDNichrome-Bold.woff2) format("woff");
+}
+
+/* Monospace font */
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/static/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2) format("woff");
+}
+
+/* Global Typography */
+html {
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar__title,
+.footer__title {
+  font-family: "MD Nichrome", sans-serif;
+}
+
+
+button,
+.button,
+pre,
+.navbar__link,
+.footer__item {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.footer__item,
+.navbar__link {
+  font-size: 0.6rem;
+}
+
+button,
+.button,
+.navbar__link {
+  text-transform: uppercase;
+}
+
+.menu__link {
+  font-size: 0.8rem;
+}
+
+/* header styles*/
+.navbar__brand {
+  display: flex;
+}
+.navbar__logo {
+  flex-shrink: 1;
+}
+.navbar__title {
+  color: var(--ifm-color-primary);
+  width: 50px;
+}
+.navbar__link {
+  display: flex;
+  height: 13px;
+  justify-content: center;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+/* footer styles*/
+.footer__link-item {
+  align-items: center;
+  display: flex;
+}
+.footer__copyright {
+  font-size: 0.5rem;
+  margin-top: 50px;
+}
+
+/**card styles*/
+.card > h2 {
+  font-size: 1rem;
+  overflow: initial !important;
+  text-overflow: unset !important;
+  white-space: wrap !important;
+}
+.card-header {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+.card-icon {
+  max-height: 24px;
+  max-width: 24px;
+}
+.card-description {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/*Dark mode component adjustments*/
+html[data-theme='dark'] {
+  .card {
+    .black-img {
+        filter: invert();
+    }
+  }
 }

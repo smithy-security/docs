@@ -5,14 +5,14 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: "Smithy Docs",
-  tagline: "Focus on the important stuff.",
+  tagline: "Documentation for the Smithy Security platform.",
   favicon: "img/favicon.png",
 
   url: "https://docs.smithy.security",
   baseUrl: "/",
 
   // GitHub pages deployment config.
-  organizationName: "ocurity",
+  organizationName: "smithy-security",
   projectName: "docs",
   trailingSlash: false,
 
@@ -30,7 +30,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/ocurity/docs/tree/main/",
+          editUrl: "https://github.com/smithy-security/docs/tree/main/",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         theme: {
@@ -70,7 +70,7 @@ const config: Config = {
           to: "/docs/category/reference",
         },
         {
-          href: "https://github.com/ocurity/docs",
+          href: "https://github.com/smithy-security/docs",
           label: "GitHub",
           position: "right",
         },
@@ -113,7 +113,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/ocurity/docs",
+              href: "https://github.com/smithy-security/docs",
             },
           ],
         },

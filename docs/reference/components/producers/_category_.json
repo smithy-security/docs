@@ -1,0 +1,8 @@
+{
+  "label": "Producers",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Components that scan your resources and produce security alerts."
+  }
+}

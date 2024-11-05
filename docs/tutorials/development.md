@@ -4,7 +4,7 @@ description: 'Going Beyond the Basics'
 sidebar_position: 2
 ---
 
-### Deploy Dracon Components
+### Deploy Smithy Components
 
 The components that are used to build our pipelines are comprised out of two
 pieces:
@@ -19,27 +19,27 @@ as follows:
 ```bash
 helm upgrade \
   --install \
-  --namespace dracon \
+  --namespace smithy \
   --version 0.8.0 \
-  dracon-oss-components \
-  oci://ghcr.io/ocurity/dracon/charts/dracon-oss-components
+  smithy-oss-components \
+  oci://ghcr.io/smithy-security/smithy/charts/smithy-oss-components
 ```
 
-### Deploying a custom version of Dracon components
+### Deploying a custom version of Smithy components
 
 The first step is to build all the containers and push them to a registry
 that your cluster has access to. We use `make` to package our containers. For
 each component our Make will automatically generate a phony target with the
 path `components/{component type}/{component name}/docker`. We have a top-level
 target that creates all the component containers along with a couple of extra
-containers our system uses, such as draconctl.
+containers our system uses, such as smithyctl.
 
 The following examples are using the local container registry used by the KiND
 cluster, but make sure that you replace the URL with the registry URL that you
 are using, if you are using something else:
 
 ```bash
-make publish-component-containers CONTAINER_REPO=localhost:5000/ocurity/dracon
+make publish-component-containers CONTAINER_REPO=localhost:5000/smithy-security/smithy
 ```
 
 > [!NOTE]
@@ -52,7 +52,7 @@ make publish-component-containers CONTAINER_REPO=localhost:5000/ocurity/dracon
 > this value.
 
 > [!TIP]
-> Make sure to use the `draconctl` image that you pushed in the repository
+> Make sure to use the `smithyctl` image that you pushed in the repository
 
 #### Using a different base image for your images
 
@@ -67,47 +67,47 @@ these components have their own Makefiles. In those cases you can place a
 `.custom_image` file in the directory with the base image you wish to use and
 that will be picked up by the Makefile and build the container.
 
-#### Deploying your custom Dracon components Helm package
+#### Deploying your custom Smithy components Helm package
 
 You can package your components into a Helm package by running the following
 command:
 
 ```bash
-export CUSTOM_DRACON_VERSION=$(make print-DRACON_VERSION)
+export CUSTOM_SMITHY_VERSION=$(make print-SMITHY_VERSION)
 export CUSTOM_HELM_COMPONENT_PACKAGE_NAME=
-make cmd/draconctl/bin
-bin/cmd/draconctl components package \
-  --version ${CUSTOM_DRACON_VERSION} \
-  --chart-version ${CUSTOM_DRACON_VERSION} \
+make cmd/smithyctl/bin
+bin/cmd/smithyctl components package \
+  --version ${CUSTOM_SMITHY_VERSION} \
+  --chart-version ${CUSTOM_SMITHY_VERSION} \
   --name ${CUSTOM_HELM_COMPONENT_PACKAGE_NAME} \
   ./components
-helm upgrade ${CUSTOM_HELM_COMPONENT_PACKAGE_NAME} ./${CUSTOM_HELM_COMPONENT_PACKAGE_NAME}-${CUSTOM_DRACON_VERSION}.tgz \
+helm upgrade ${CUSTOM_HELM_COMPONENT_PACKAGE_NAME} ./${CUSTOM_HELM_COMPONENT_PACKAGE_NAME}-${CUSTOM_SMITHY_VERSION}.tgz \
   --install \
-  --namespace dracon
+  --namespace smithy
 ```
 
 If your custom components are local, you need to override the component registry
 you can do so with the following slightly modified helm command
 
 ```bash
-helm upgrade ${CUSTOM_HELM_COMPONENT_PACKAGE_NAME} ./${CUSTOM_HELM_COMPONENT_PACKAGE_NAME}-${CUSTOM_DRACON_VERSION}.tgz \
+helm upgrade ${CUSTOM_HELM_COMPONENT_PACKAGE_NAME} ./${CUSTOM_HELM_COMPONENT_PACKAGE_NAME}-${CUSTOM_SMITHY_VERSION}.tgz \
   --install \
-  --namespace dracon\
-  --set container_registry=kind-registry:5000/ocurity/dracon
+  --namespace smithy\
+  --set container_registry=kind-registry:5000/smithy-security/smithy
 ```
 
 After changes to your components you need to redeploy, you can do so as such:
 
 ```bash
-export CUSTOM_DRACON_VERSION=$(make print-DRACON_VERSION)
-make publish-component-containers CONTAINER_REPO=localhost:5000/ocurity/dracon
-bin/cmd/draconctl components package   --version ${CUSTOM_DRACON_VERSION}   \
-  --chart-version ${CUSTOM_DRACON_VERSION}   \
+export CUSTOM_SMITHY_VERSION=$(make print-SMITHY_VERSION)
+make publish-component-containers CONTAINER_REPO=localhost:5000/smithy-security/smithy
+bin/cmd/smithyctl components package   --version ${CUSTOM_SMITHY_VERSION}   \
+  --chart-version ${CUSTOM_SMITHY_VERSION}   \
   --name ${CUSTOM_HELM_COMPONENT_PACKAGE_NAME}   \
   ./components
 helm upgrade ${CUSTOM_HELM_COMPONENT_PACKAGE_NAME} \
-  ./${CUSTOM_HELM_COMPONENT_PACKAGE_NAME}-${CUSTOM_DRACON_VERSION}.tgz   \
+  ./${CUSTOM_HELM_COMPONENT_PACKAGE_NAME}-${CUSTOM_SMITHY_VERSION}.tgz   \
   --install \
-  --namespace dracon \
-  --set container_registry=kind-registry:5000/ocurity/dracon
+  --namespace smithy \
+  --set container_registry=kind-registry:5000/smithy-security/smithy
 ```
