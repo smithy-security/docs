@@ -55,7 +55,7 @@ const config: Config = {
         {
           position: "left",
           label: "Open-Source",
-          to: "/docs/category/oss",
+          to: "/docs/category/smithy-open-source",
         },
         {
           position: "left",
@@ -70,7 +70,7 @@ const config: Config = {
         {
           position: "left",
           label: "Reference",
-          to: "/docs/reference",
+          to: "/docs/category/reference",
         },
         {
           href: "https://github.com/smithy-security/docs",
@@ -90,7 +90,7 @@ const config: Config = {
             },
             {
               label: "Open-Source",
-              to: "/docs/category/oss",
+              to: "/docs/category/smithy-open-source",
             },
             {
               label: "SaaS",
@@ -102,7 +102,7 @@ const config: Config = {
             },
             {
               label: "Reference",
-              to: "/docs/reference",
+              to: "/docs/category/reference",
             },
           ],
         },
@@ -134,7 +134,7 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  plugins: [],
+  plugins: [require.resolve('docusaurus-lunr-search')],
 };
 
 export default config;

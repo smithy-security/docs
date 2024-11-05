@@ -25,7 +25,7 @@ function DocsGroup({title, description, href, icon}) {
         <article className="col col--4 margin-bottom--lg">
             <a className="card padding--lg cardContainer_src-theme-DocCard-styles-module" href={href}>
                 <h2 className="card-header cardTitle_src-theme-DocCard-styles-module" title={title}><img
-                    src={icon} className="card-icon black-img"/><span>{title}</span></h2><p
+                    src={icon} className="card-icon black-img" alt={title}/><span>{title}</span></h2><p
                 className="card-description cardDescription_src-theme-DocCard-styles-module"
                 title={description}>{description}</p>
             </a>
@@ -50,7 +50,7 @@ export default function Home(): JSX.Element {
                         icon="/img/icons/how-to.png"
                         title="Smithy Open Source"
                         description="Learn about the Smithy Open-Source project."
-                        href="/docs/category/oss"
+                        href="/docs/category/smithy-open-source"
                     />
                     <DocsGroup
                         icon="/img/icons/star.png"
@@ -68,13 +68,13 @@ export default function Home(): JSX.Element {
                         icon="/img/icons/timer.png"
                         title="Quickstart"
                         description="Start using the Smithy Open-Source in 5 minutes."
-                        href="/docs/oss/quickstart"
+                        href="/docs/smithy-open-source/quickstart"
                     />
                     <DocsGroup
                         icon="/img/icons/pencil.png"
                         title="Write your own component"
                         description="Write your own integration with Smithy in 5 minutes."
-                        href="/docs/oss/write-your-own-component"
+                        href="/docs/smithy-open-source/write-your-own-component"
                     />
                     <DocsGroup
                         icon="/img/icons/reference.png"
