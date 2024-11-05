@@ -1,0 +1,8 @@
+{
+  "label": "Smithy Open-Source",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Smithy is open-core, so you don't need to setup the SaaS to use it."
+  }
+}

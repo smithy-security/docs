@@ -69,7 +69,7 @@ function CardLayout({
         as="h2"
         className={clsx('card-header', styles.cardTitle)}
         title={title}>
-        <img src={icon} class="card-icon"/>
+        <img src={icon} className="card-icon"/>
         <span>{title}</span>
       </Heading>
       {description && (

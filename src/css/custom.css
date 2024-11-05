@@ -8,6 +8,7 @@
 :root {
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: #f1ede4;
+  --ifm-background-surface-color-dark: #d4c9b6;
   --ifm-code-font-size: 95%;
   --ifm-color-primary: #f65f1e;
   --ifm-color-primary-dark: #e35200;
@@ -23,6 +24,7 @@
   --ifm-footer-title-color: var(--ifm-color-white);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-hover-overlay: #fbf7f1;
+  --ifm-navbar-search-input-background-color: #ffffff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -40,6 +42,7 @@ html[data-theme='dark'] {
   --ifm-color-primary-lightest: #ff8a49;
   --ifm-font-color-base: #fbf7f1;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-navbar-search-input-background-color: #fbf7f1;
   --ifm-toc-border-color: #1f1c19;
 }
 
@@ -149,8 +152,13 @@ button,
 }
 
 /**card styles*/
+.card.cardContainer_S8oU {
+  border: 1px solid var(--ifm-background-surface-color-dark);
+}
 .card > h2 {
   font-size: 1rem;
+  --ifm-link-color: var(--ifm-color-emphasis-800);
+  --ifm-link-hover-color: var(--ifm-color-emphasis-700);
   overflow: initial !important;
   text-overflow: unset !important;
   white-space: wrap !important;
@@ -169,12 +177,39 @@ button,
     text-decoration: none;
   }
 }
+.card p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+a.cardContainer_src-theme-DocCard-styles-module {
+    border: 1px solid var(--ifm-background-surface-color-dark);
+    box-shadow: -9px 10px 10px rgba(0, 0, 0, 3%);
+    color: var(--ifm-color-emphasis-800);
+    text-decoration: none;
+
+    &:hover {
+      border-color: 1px solid var(--ifm-color-primary) !important;
+      box-shadow: none !important;
+      color: var(--ifm-color-emphasis-700);
+      text-decoration: none;
+    }
+}
+a.cardContainer_src-theme-DocCard-styles-module:hover {
+    border-color: 1px solid var(--ifm-color-primary) !important;
+    box-shadow: none !important;
+    color: var(--ifm-color-emphasis-700);
+    text-decoration: none;
+}
 
 /*Dark mode component adjustments*/
-html[data-theme='dark'] {
-  .card {
-    .black-img {
-        filter: invert();
-    }
-  }
+[data-theme='dark'] .black-img {
+    filter: invert();
+}
+
+/* autocomplete */
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header,
+.algolia-autocomplete .algolia-docsearch-suggestion--title {
+  font-family: "MD Nichrome", sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
 }
