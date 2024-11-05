@@ -68,7 +68,7 @@ export default function Home(): JSX.Element {
                         icon="/img/icons/timer.png"
                         title="Quickstart"
                         description="Start using the Smithy Open-Source in 5 minutes."
-                        href="/docs/smithy-open-source/quickstart"
+                        href="/docs/oss/quickstart"
                     />
                     <DocsGroup
                         icon="/img/icons/pencil.png"
