@@ -6,7 +6,7 @@ sidebar_position: 3
 
 There are several example pipelines in the [/examples folder](https://github.com/smithy-security/smithy/tree/main/examples/pipelines).  
 In this tutorial we are going to create our own one.  
-We assume that you have already completed all steps in the [Installation](http://localhost:3000/docs/oss/installation) tutorial.  
+We assume that you have already completed all steps in the [Installation](/docs/oss/quickstart#installation) tutorial.  
 Check where your smithyctl is, e.g. in `./bin/cmd/linux/amd64/smithyctl`.
 
 ## Summary 
@@ -23,7 +23,7 @@ Since we are scanning Go it makes sense to also enrich the results by detecting
 duplicates and as a bonus let's also apply a [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/) policy.
 
 #### Write the Kustomization.yaml
-We can compose this pipeline by writing the following `kustomization.yaml` in the smithy repository's folder:
+We can compose this pipeline by writing the following `kustomization.yaml` in the Smithy repository's root:
 
 ```yaml
 ---
@@ -53,7 +53,7 @@ In this file:
 * it should aggregate the enriched results
 * finally it should return the results as JSON
 
-#### Change the pipeline run parameters
+#### Edit the pipeline run parameters
 
 To run a pipeline you need a `pipelinerun.yaml` which binds values to the
 component variables and instructs k8s to run the relevant pipeline.  
