@@ -17,12 +17,11 @@ and [GitHub repo](https://github.com/trufflesecurity/trufflehog).
 
 ### Open-Source
 
-1. Add the Truffelhog Helm package to the pipeline settings:
+1. Add the Helm package to the pipeline settings:
 
 ```
 ---
 # file: ./my-pipeline/kustomization.yaml
-kind: Kustomization
 components:
   - pkg:helm/smithy-security-oss-components/producer-trufflehog
 ```

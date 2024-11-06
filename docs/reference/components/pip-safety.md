@@ -16,12 +16,11 @@ and [GitHub repo](https://github.com/pyupio/safety).
 
 ### Open-Source
 
-1. Add the PIP Safety Helm package to the pipeline settings:
+1. Add the Helm package to the pipeline settings:
 
 ```
 ---
 # file: ./my-pipeline/kustomization.yaml
-kind: Kustomization
 components:
   - pkg:helm/smithy-security-oss-components/producer-python-pip-safety
 ```
