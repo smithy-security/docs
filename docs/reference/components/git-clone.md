@@ -5,9 +5,9 @@ title: 'Git Clone'
 description: 'Source component that clones a repository for scanning'
 sidebar_position: 1
 ---
-# Git Clone Source Component
+# Git Clone 
 
-This component lets Smithy clone a repository from GitHub, GitLab or BitBucket.
+This source component lets Smithy clone a repository from GitHub, GitLab or BitBucket.
 
 ## How to use
 
