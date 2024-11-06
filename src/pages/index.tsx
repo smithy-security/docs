@@ -62,7 +62,7 @@ export default function Home(): JSX.Element {
                         icon="/img/icons/puzzle.png"
                         title="Components"
                         description="See which tools already integrate with Smithy."
-                        href="/docs/reference/components/all"
+                        href="/docs/category/components"
                     />
                     <DocsGroup
                         icon="/img/icons/timer.png"

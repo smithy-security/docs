@@ -1,16 +1,44 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/git.svg"
+  icon: "/img/components/git-clone.svg"
+title: 'Git Clone'
+description: 'Source component that clones a repository for scanning'
+sidebar_position: 1
 ---
 # Git Clone Source Component
 
-This component lets Smithy clone a repository from GitHub.
+This component lets Smithy clone a repository from GitHub, GitLab or BitBucket.
 
 ## How to use
 
+### Open-Source
+1. Add the Git clone helm package to the pipeline settings:
+```
+---
+# file: ./my-pipeline/kustomization.yaml
+kind: Kustomization
+components:
+  - pkg:helm/smithy-security-oss-components/git-clone
+```
+2. Configure the run parameters of the component in the pipeline run file:
+```
+# file: ./my-pipeline/pipelinerun.yaml
+---
+...
+spec:
+  pipelineRef:
+    name: go-pipeline
+  params:
+  - name: git-clone-url
+    value: <Your Git URL>
+  - name: git-clone-subdirectory
+    value: <Your Sub-folder>
+```
+
+### SaaS
 1. In the Smithy UI, open the page to create a new workflow.
 2. Find the Git Clone in the Sources dropdown.
-3. Set the URL of your repository on the right. if your repository is private, read below.
+3. Set the URL of your repository on the right. If your repository is private, read [below](/docs/reference/components/git-clone#cloning-a-private-repository).
 
 All other settings are optional.
 
@@ -24,9 +52,9 @@ You can generate a PAT token on GitHub via your account settings. Read the preci
 instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 ).
 
-## Available Options
+## Options
 
-You can configure the GitHub Source component with the following options:
+You can configure the Git Source component with the following options:
 
 | Option Name                 | Description                                                                                                                            | Default                                                                    | Type    |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|
