@@ -8,7 +8,7 @@ sidebar_position: 3
 
 # Python Bandit
 
-This producer component acts as a SAST scanner that analyses Python source code to look for security issues.
+This producer component acts as a [SAST](https://en.wikipedia.org/wiki/Static_application_security_testing) scanner that analyses Python source code to look for security issues.
 Read more about it on the [Python Bandit page](https://bandit.readthedocs.io/en/latest/)
 and [GitHub repo](https://github.com/PyCQA/bandit/tree/1.7.10).
 
