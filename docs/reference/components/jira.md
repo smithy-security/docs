@@ -57,7 +57,7 @@ spec:
 
 ## Options
 
-You can configure the Jira component with the following options:
+You can configure this component with the following options:
 
 | Option Name                        | Description                                                                                                                                   | Default | Type   |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------|--------|

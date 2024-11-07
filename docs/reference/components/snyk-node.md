@@ -26,7 +26,7 @@ components:
   - pkg:helm/smithy-security-oss-components/producer-snyk-node
 ```
 
-2. Configure the run parameter of the component in the pipeline run file. 
+2. Configure the run parameter of the component in the pipeline run file.
 
 ```
 # file: ./my-pipeline/pipelinerun.yaml
@@ -47,7 +47,7 @@ spec:
 
 ## Options
 
-You can configure the Snyk Node component with the following options:
+You can configure this component with the following options:
 
 | Option Name                           | Description  | Default | Type   |
 |---------------------------------------|--------------|---------|--------|

@@ -59,7 +59,7 @@ instructions [here](https://docs.github.com/en/authentication/keeping-your-accou
 
 ## Options
 
-You can configure the Git Source component with the following options:
+You can configure this component with the following options:
 
 | Option Name                 | Description                                                                                                                            | Default                                                                    | Type    |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|
