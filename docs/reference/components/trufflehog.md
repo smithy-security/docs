@@ -26,7 +26,7 @@ components:
   - pkg:helm/smithy-security-oss-components/producer-trufflehog
 ```
 
-2. Configure the run parameters of the component in the pipeline run file:
+2. Configure the run parameters of the component in the pipeline run file. All parameters are optional:
 
 ```
 # file: ./my-pipeline/pipelinerun.yaml

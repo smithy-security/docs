@@ -28,7 +28,7 @@ components:
   - pkg:helm/smithy-security-oss-components/producer-cdxgen
 ```
 
-2. Configure the run parameters of the component in the pipeline run file:
+2. Optionally configure the run parameters of the component in the pipeline run file. All parameters are optional:
 
 ```
 # file: ./my-pipeline/pipelinerun.yaml

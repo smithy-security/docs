@@ -31,8 +31,6 @@ spec:
   params:
   - name: git-clone-url
     value: <Your Git URL>
-  - name: git-clone-subdirectory
-    value: <Your Sub-folder>
 ```
 
 ### SaaS
@@ -58,7 +56,7 @@ You can configure the Git Source component with the following options:
 
 | Option Name                 | Description                                                                                                                            | Default                                                                    | Type    |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|
-| URL                         | Repository URL to clone                                                                                                                |                                                                            | String  |
+| URL                         | [Required] Repository URL to clone                                                                                                     |                                                                            | String  |
 | Revision                    | Revision to checkout. (a branch, tag, sha, ref, etc...)                                                                                |                                                                            | String  |
 | Refspec                     | Refspec to fetch before checking out revision.                                                                                         |                                                                            | String  |
 | Submodules                  | Initialize and fetch git submodules.                                                                                                   | "true"                                                                     | Boolean |
