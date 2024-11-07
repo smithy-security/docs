@@ -49,46 +49,48 @@ export default function Home(): JSX.Element {
                     <DocsGroup
                         icon="/img/icons/how-to.png"
                         title="Smithy Open Source"
-                        description="Learn about the Smithy Open-Source project."
+                        description="Learn how to use the Smithy Open-Source project."
                         href="/docs/category/smithy-open-source"
                     />
                     <DocsGroup
                         icon="/img/icons/star.png"
                         title="Smithy SaaS"
-                        description="Learn how to get the best of the premium Smithy SaaS."
+                        description="Learn how to get the best of the Smithy SaaS."
                         href="/docs/category/saas"
                     />
                     <DocsGroup
                         icon="/img/icons/puzzle.png"
                         title="Components"
                         description="See which tools already integrate with Smithy."
-                        href="/docs/reference/components/all"
+                        href="/docs/category/components"
                     />
                     <DocsGroup
                         icon="/img/icons/timer.png"
                         title="Quickstart"
-                        description="Start using the Smithy Open-Source in 5 minutes."
+                        description="Start using the Smithy Open-Source."
                         href="/docs/oss/quickstart"
                     />
                     <DocsGroup
                         icon="/img/icons/pencil.png"
                         title="Write your own pipeline"
-                        description="Write your own pipeline with Smithy in 5 minutes."
+                        description="Write your own pipeline with Smithy."
                         href="/docs/oss/writing-pipelines"
                     />
                     <DocsGroup
                         icon="/img/icons/reference.png"
                         title="Reference"
-                        description="Understand of the machinery and how to operate it."
+                        description="Understand of the machinery in depth."
                         href="/docs/category/reference"
                     />
                 </section>
                 <section className="row margin-top--lg">
-                    <article className="col margin-bottom--lg" style={{ margin: "0 auto", textAlign: "center" }}>
+                    <article className="col margin-bottom--lg" style={{margin: "0 auto", textAlign: "center"}}>
                         <h2>
                             More questions?
                         </h2>
-                        <p>If you have trouble finding what you need, we are here to help!<br/>Send us a message on <a href="mailto:questions@smithy.security">questions@smithy.security</a> and we'll get back to you shortly.</p>
+                        <p>If you have trouble finding what you need, we are here to help!<br/>Send us a message on <a
+                            href="mailto:info@smithy.security">info@smithy.security</a> and we'll get back to you
+                            shortly.</p>
                     </article>
                 </section>
             </div>

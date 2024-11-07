@@ -65,7 +65,7 @@ const config: Config = {
         {
           position: "left",
           label: "Components",
-          to: "/docs/reference/components/all",
+          to: "/docs/category/components",
         },
         {
           position: "left",
@@ -98,7 +98,7 @@ const config: Config = {
             },
             {
               label: "Components",
-              to: "/docs/reference/components/all",
+              to: "/docs/category/components",
             },
             {
               label: "Reference",

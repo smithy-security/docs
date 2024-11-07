@@ -1,8 +1,0 @@
-{
-  "label": "Enrichers",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Components that enrich your security alerts with more details and turn them into actionable events."
-  }
-}

@@ -6,12 +6,10 @@ sidebar_position: 2
 # Quickstart 
 
 With this tutorial we will learn how to execute a Pipeline on Smithy.  
-You will need to [install](http://localhost:3000/docs/oss/installation) Smithy locally first.  
-Check where your smithyctl is, e.g. in `./bin/cmd/linux/amd64/smithyctl`.
 
 ## Summary
 
-Following the steps below, we'll deploy an example Golang project
+We'll install Smithy, then we'll deploy an example Golang project
 pipeline which will:
 
 * Clone a public [GitHub repository](https://github.com/sqreen/go-dvwa.git) with some vulnerable Golang code. 
@@ -20,12 +18,60 @@ pipeline which will:
 * Enrich the findings with [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) annotation
 * Show the enriched results in JSON format
 
+## Installation
+
+You will first need to install the following tools on your system:
+- [KiND](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+- [kustomize](https://kubectl.docs.kubernetes.io/installation/kustomize/)
+- [Docker](https://docs.docker.com/engine/install/)
+- [Helm](https://helm.sh/docs/intro/install/)
+- [Go](https://go.dev/doc/install)
+
+### Set up Smithy and its dependencies
+
+1. Clone the Smithy [Open-Source repository](https://github.com/smithy-security/smithy) with
+```
+git clone git@github.com:smithy-security/smithy.git
+```
+2. Set up Smithy and its dependencies by executing in the folder root:
+```
+make install
+```
+
+This command will:
+* Spin up a Kubernetes cluster in Docker using [KinD](https://kind.sigs.k8s.io/).
+* Deploy Smithy dependencies and Custom Resource Definitions (CRDs).
+  Most of these dependencies are required by the example pipelines:
+    * Elasticsearch
+    * Kibana
+    * Postgres
+
+All the dependencies are built with Smithy's [latest release](https://github.com/smithy-security/smithy/tags).
+
+This might take a while, so we invite you to go and grab a coffee!
+
+```text
+   )  (
+  (   ) )
+   ) ( (
+  -------
+.-\     /
+'- \   /
+  _______
+espresso cup by @ptzianos
+```
+
+### SmithyCtl
+
+You need to know the path of `smithyctl` in order to execute your pipelines. It is in the Smithy repository root.  
+If you are using Linux, that is `./bin/cmd/linux/amd64/smithyctl`.  
+Make a note of it, because you'll need it to deploy and run the pipeline later.
+
 ## Deploy the pipeline
 
-1. Configure the pipeline settings in [/examples/pipelines/golang-project/pipelinerun.yaml](https://github.com/smithy-security/smithy/blob/main/examples/pipelines/golang-project/pipelinerun.yaml). E.g Set the target repository in the `git-clone-url`
+1. Configure the pipeline settings in [/examples/pipelines/golang-project/pipelinerun.yaml](https://github.com/smithy-security/smithy/blob/main/examples/pipelines/golang-project/pipelinerun.yaml). E.g. Set the target repository in the `git-clone-url`
    parameter.
-2. Check where your `smithyctl` is, inside the Smithy repository root. If you are using linux, it is in `./bin/cmd/linux/amd64/smithyctl`
-3. Deploy the pipeline using the address of your smithyctl:
+2. Deploy the pipeline using the path of your `smithyctl`. Run the following in the Smithy folder root:
 ```
 ./bin/cmd/linux/amd64/smithyctl pipelines deploy ./examples/pipelines/golang-project
 ```
@@ -99,7 +145,7 @@ kubectl -n smithy logs smithy-golang-project-[your-pod-code]-consumer-stdout-jso
 
 If a task pod does not complete, you can check its logs.
 
-Usually you can tail the logs of a failing task pod with:
+Usually you can tail the logs of a failing pod with:
 
 ```shell
 kubectl logs $podName $taskName 
