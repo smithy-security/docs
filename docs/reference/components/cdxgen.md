@@ -6,7 +6,7 @@ description: 'Producer component that generates a CycloneDX SBOM from source cod
 sidebar_position: 5
 ---
 
-# CDXgen
+# CDXGEN
 
 This producer component generates
 a [CycloneDX](https://cyclonedx.org/) [SBOM](https://scribesecurity.com/sbom/#definition-of-software-bill-of-materials)
@@ -38,31 +38,31 @@ spec:
     ...
     params:
     - name: producer-cdxgen-flags
-      value: ["some-flag", "another-flag"]
+      value: []
     - name: producer-cdxgen-fetch-license
       value: "false"
     - name: producer-cdxgen-github-token
-      value: "<your github token>"
+      value: ""
     - name: producer-cdxgen-astgen-ignore-file-pattern
-      value: "<ignore-file-pattern>"
+      value: ""
     - name: producer-cdxgen-astgen-ignore-dirs
-      value: "<ignore-dirs>"
+      value: ""
 ```
 
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find the CDXgen in the Producers dropdown.
+2. Find the CDXGEN in the Producers dropdown.
 3. Configure the parameters in the form on the right
 
 ## Options
 
-You can configure the CDXgen component with the following options:
+You can configure the CDXGEN component with the following options:
 
-| Option Name                                | Description                                                                                                                                                                                                                                           | Default | Type             |
-|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|------------------|
-| producer-cdxgen-flags                      | Available flags: "in" (string with path to input file),  "out" (string with path to output file), "debug", (bool to enable debug logging, defaults to false), "append",  (bool to append to output file instead of overwriting it, defaults to false) | []      | Array of Strings |
-| producer-cdxgen-fetch-license              | Whether to fetch license information from the registry. Works for npm and golang only.                                                                                                                                                                | "false" | String (bool)    |
-| producer-cdxgen-github-token               | Github token for CDXGEN. Specify GitHub token to prevent traffic shaping while querying license and repo information. Read more [here](https://github.com/pmpplatform/cdxgen?tab=readme-ov-file#environment-variables)                                                                                                                  | ""      | String           |
-| producer-cdxgen-astgen-ignore-file-pattern | regex of files to ignore                                                                                                                                                                                                                              | ""      | String           |
-| producer-cdxgen-astgen-ignore-dirs         | regex of directories to ignore                                                                                                                                                                                                                        | ""      | String           |
+| Option Name                                | Description                                                                                                                                                                                                            | Default | Type             |
+|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|------------------|
+| producer-cdxgen-flags                      | Available flags: "debug" (to enable debug logging, defaults to false), "append" (append to output file instead of overwriting it, defaults to false)                                                                   | []      | Array of Strings |
+| producer-cdxgen-fetch-license              | Whether to fetch license information from the registry. Works for npm and golang only.                                                                                                                                 | "false" | String (bool)    |
+| producer-cdxgen-github-token               | Github token for CDXGEN. Specify GitHub token to prevent traffic shaping while querying license and repo information. Read more [here](https://github.com/pmpplatform/cdxgen?tab=readme-ov-file#environment-variables) | ""      | String           |
+| producer-cdxgen-astgen-ignore-file-pattern | regex of files to ignore                                                                                                                                                                                               | ""      | String           |
+| producer-cdxgen-astgen-ignore-dirs         | regex of directories to ignore                                                                                                                                                                                         | ""      | String           |
