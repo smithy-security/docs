@@ -53,12 +53,12 @@ spec:
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following options. The options that have a default value are optional:
 
-| Option Name                                  | Description                       | Default                                      | Type   |
-|----------------------------------------------|-----------------------------------|----------------------------------------------|--------|
-| [Required] consumer-pdf-s3-access-key-id     | Your S3 access key ID             |                                              | String |
-| [Required] consumer-pdf-s3-secret-access-key | Your S3 access key                |                                              | String |
-| [Required] consumer-pdf-s3-bucket-name       | Your S3 bucket name               |                                              | String |
-| [Required] consumer-pdf-s3-bucket-region     | Your S3 bucket region             |                                              | String |
-| consumer-pdf-template-location               | Path to your PDF template in HTML | "/app/components/consumers/pdf/default.html" | String |
+| Option Name                                      | Description                       | Default                                      | Type   |
+|--------------------------------------------------|-----------------------------------|----------------------------------------------|--------|
+| **[Required]** consumer-pdf-s3-access-key-id     | Your S3 access key ID             |                                              | String |
+| **[Required]** consumer-pdf-s3-secret-access-key | Your S3 access key                |                                              | String |
+| **[Required]** consumer-pdf-s3-bucket-name       | Your S3 bucket name               |                                              | String |
+| **[Required]** consumer-pdf-s3-bucket-region     | Your S3 bucket region             |                                              | String |
+| consumer-pdf-template-location                   | Path to your PDF template in HTML | "/app/components/consumers/pdf/default.html" | String |

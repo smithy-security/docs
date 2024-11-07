@@ -57,7 +57,7 @@ spec:
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following options. The options that have a default value are optional:
 
 | Option Name                                | Description                                                                                                                                                                                                            | Default | Type             |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|------------------|

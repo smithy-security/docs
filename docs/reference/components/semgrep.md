@@ -45,12 +45,12 @@ spec:
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find the CDXGEN in the Producers dropdown.
+2. Find Semgrep in the Producers dropdown.
 3. Configure the parameters in the form on the right
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following options. The values are optional:
 
 | Option Name                   | Description                                                                            | Default     | Type        |
 |-------------------------------|----------------------------------------------------------------------------------------|-------------|-------------|

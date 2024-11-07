@@ -51,8 +51,8 @@ spec:
 
 You can configure this component with the following options:
 
-| Option Name                             | Description                                                           | Default | Type   |
-|-----------------------------------------|-----------------------------------------------------------------------|---------|--------|
-| [Required] producer-snyk-docker-api-key | Snyk API key                                                          |         | String |
-| [Required] producer-snyk-docker-image   | The docker image to be pulled from the registry, e.g. "my-app:latest" |         | String |
+| Option Name                                 | Description                                                           | Default | Type   |
+|---------------------------------------------|-----------------------------------------------------------------------|---------|--------|
+| **[Required]** producer-snyk-docker-api-key | Snyk API key                                                          |         | String |
+| **[Required]** producer-snyk-docker-image   | The docker image to be pulled from the registry, e.g. "my-app:latest" |         | String |
 

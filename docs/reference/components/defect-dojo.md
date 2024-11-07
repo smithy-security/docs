@@ -54,12 +54,12 @@ spec:
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following options. The options that have a default value are optional:
 
-| Option Name                               | Description                                                                        | Default | Type   |
-|-------------------------------------------|------------------------------------------------------------------------------------|---------|--------|
-| [Required] consumer-defectdojo-api-url    | Domain where your DefectDojo workspace is hosted                                   |         | String |
-| [Required] consumer-defectdojo-user       | The system user who can post issues on DefectDojo                                  |         | String |
-| [Required] consumer-defectdojo-token      | API token for access to DefectDojo                                                 |         | String |
-| [Required] consumer-defectdojo-product-id | DefectDojo product ID if you want to create an engagement. Set as "" if not needed |         | String |
-| consumer-defectdojo-description-template  | a Go Template string describing how to show Raw or Enriched issues                 | ""      | String |
+| Option Name                                   | Description                                                                        | Default | Type   |
+|-----------------------------------------------|------------------------------------------------------------------------------------|---------|--------|
+| **[Required]** consumer-defectdojo-api-url    | Domain where your DefectDojo workspace is hosted                                   |         | String |
+| **[Required]** consumer-defectdojo-user       | The system user who can post issues on DefectDojo                                  |         | String |
+| **[Required]** consumer-defectdojo-token      | API token for access to DefectDojo                                                 |         | String |
+| **[Required]** consumer-defectdojo-product-id | DefectDojo product ID if you want to create an engagement. Set as "" if not needed |         | String |
+| consumer-defectdojo-description-template      | a Go Template string describing how to show Raw or Enriched issues                 | ""      | String |

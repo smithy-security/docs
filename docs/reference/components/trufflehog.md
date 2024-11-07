@@ -36,7 +36,7 @@ spec:
   ...
   params:
   - name: producer-trufflehog-git-repository
-    value: <Your Git URL>
+    value: <Target Git repo URL>
 ```
 
 ### SaaS
@@ -46,7 +46,7 @@ spec:
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following option:
 
 | Option Name                        | Description                                                  | Default | Type   |
 |------------------------------------|--------------------------------------------------------------|---------|--------|

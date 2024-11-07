@@ -18,7 +18,7 @@ authenticate.
 
 ### Open-Source
 
-1. Add the Jira Helm package to the pipeline settings:
+1. Add the Helm package to the pipeline settings:
 
 ```
 ---
@@ -57,12 +57,13 @@ spec:
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following options. The options that have a default value are optional. The
+options that have a default value are optional:
 
-| Option Name                        | Description                                                                                                                                   | Default | Type   |
-|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------|--------|
-| [Required] consumer-jira-url       | Domain where your Jira workspace is hosted                                                                                                    |         | String |
-| [Required] consumer-jira-api-token | Jira API token. See how to get one [here](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) |         | String |
-| [Required] consumer-jira-user      | The user who will be named as the ticket creator on Jira. (user@email.com)                                                                    |         | String |
-| consumer-jira-project-name         | The Project Name parameter needs to match the project name on Jira                                                                            | ""      | String |
-| consumer-jira-issue-type           | The Issue Type parameter needs to match the exact issue type of the project on Jira. Jira does not support multiple issue types per board.    | "Task"  | String |
+| Option Name                            | Description                                                                                                                                   | Default | Type   |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------|--------|
+| **[Required]** consumer-jira-url       | Domain where your Jira workspace is hosted                                                                                                    |         | String |
+| **[Required]** consumer-jira-api-token | Jira API token. See how to get one [here](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) |         | String |
+| **[Required]** consumer-jira-user      | The user who will be named as the ticket creator on Jira. (user@email.com)                                                                    |         | String |
+| consumer-jira-project-name             | The Project Name parameter needs to match the project name on Jira                                                                            | ""      | String |
+| consumer-jira-issue-type               | The Issue Type parameter needs to match the exact issue type of the project on Jira. Jira does not support multiple issue types per board.    | "Task"  | String |

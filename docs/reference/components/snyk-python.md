@@ -47,10 +47,10 @@ spec:
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following options. The options that have a default value are optional:
 
 | Option Name                                            | Description                            | Default | Type   |
 |--------------------------------------------------------|----------------------------------------|---------|--------|
-| [Required] producer-snyk-python-api-key                | Snyk API key                           |         | String |
+| **[Required]** producer-snyk-python-api-key            | Snyk API key                           |         | String |
 | producer-snyk-python-relative-path-to-requirements-txt | Relative path to the requirtements.txt | ""      | String |
 

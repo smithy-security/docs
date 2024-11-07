@@ -44,14 +44,14 @@ spec:
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find the OSSF in the Producers dropdown.
+2. Find OSSF in the Producers dropdown.
 3. Configure the parameters in the form on the right
 
 ## Options
 
 You can configure this component with the following options:
 
-| Option Name                                          | Description                                | Default | Type   |
-|------------------------------------------------------|--------------------------------------------|---------|--------|
-| [Required] producer-ossf-scorecard-input-repo        | The URL of the repository you want to scan |         | String |
-| [Required] producer-ossf-scorecard-github-auth-token | Your GitHub auth token                     |         | String |
+| Option Name                                              | Description                                | Default | Type   |
+|----------------------------------------------------------|--------------------------------------------|---------|--------|
+| **[Required]** producer-ossf-scorecard-input-repo        | The URL of the repository you want to scan |         | String |
+| **[Required]** producer-ossf-scorecard-github-auth-token | Your GitHub auth token                     |         | String |

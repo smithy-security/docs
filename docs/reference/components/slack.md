@@ -48,9 +48,9 @@ spec:
 
 ## Options
 
-You can configure this component with the following options:
+You can configure this component with the following options. :
 
-| Option Name                     | Description                                                                                                                            | Default                                                                                                                      | Type   |
-|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------|
-| consumer-slack-webhook          | The Slack webhook to send messages to. Follow this guide to generate: https://api.slack.com/messaging/webhooks                         | ""                                                                                                                           | String |
-| consumer-slack-message-template | The message template to use when sending messages to Slack. You can use: `<scanID>`, `<scanStartTime>`, `<numResults>`, `<newResults>` | ```Smithy scan <scanID>, started at <scanStartTime>, completed with <numResults> findings, out of which, <newResults> new``` | String |
+| Option Name                           | Description                                                                                                                            | Default                                                                                                                      | Type   |
+|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------|
+| **[Required]** consumer-slack-webhook | The Slack webhook to send messages to. Follow this guide to generate: https://api.slack.com/messaging/webhooks                         | ""                                                                                                                           | String |
+| consumer-slack-message-template       | The message template to use when sending messages to Slack. You can use: `<scanID>`, `<scanStartTime>`, `<numResults>`, `<newResults>` | ```Smithy scan <scanID>, started at <scanStartTime>, completed with <numResults> findings, out of which, <newResults> new``` | String |

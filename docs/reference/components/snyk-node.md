@@ -49,6 +49,6 @@ spec:
 
 You can configure this component with the following options:
 
-| Option Name                           | Description  | Default | Type   |
-|---------------------------------------|--------------|---------|--------|
-| [Required] producer-snyk-node-api-key | Snyk API key |         | String |
+| Option Name                               | Description  | Default | Type   |
+|-------------------------------------------|--------------|---------|--------|
+| **[Required]** producer-snyk-node-api-key | Snyk API key |         | String |
