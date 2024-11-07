@@ -8,7 +8,11 @@ sidebar_position: 13
 
 # Jira
 
-Consumer component that pushes findings to a Jira instance
+The Jira Consumer allows you to publish Vulnerability Issues to your
+organisation's Jira workspace straight from the Smithy pipeline results.
+
+You need to provide both the api token and the email of the user who owns the api token for this component to
+authenticate.
 
 ## How to use
 
@@ -57,8 +61,8 @@ You can configure the Jira component with the following options:
 
 | Option Name                        | Description                                                                                                                                   | Default | Type   |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------|--------|
-| [Required] consumer-jira-url       | URL of your Jira instance                                                                                                                     |         | String |
+| [Required] consumer-jira-url       | Domain where your Jira workspace is hosted                                                                                                    |         | String |
 | [Required] consumer-jira-api-token | Jira API token. See how to get one [here](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) |         | String |
-| [Required] consumer-jira-user      | The user who will be named as the ticket creator on Jira.                                                                                     |         | String |
+| [Required] consumer-jira-user      | The user who will be named as the ticket creator on Jira. (user@email.com)                                                                    |         | String |
 | consumer-jira-project-name         | The Project Name parameter needs to match the project name on Jira                                                                            | ""      | String |
-| consumer-jira-issue-type           | The Issue Type parameter needs to match the exact issue type of the project on Jira                                                           | "Task"  | String |
+| consumer-jira-issue-type           | The Issue Type parameter needs to match the exact issue type of the project on Jira. Jira does not support multiple issue types per board.    | "Task"  | String |
