@@ -84,11 +84,13 @@ export default function Home(): JSX.Element {
                     />
                 </section>
                 <section className="row margin-top--lg">
-                    <article className="col margin-bottom--lg" style={{ margin: "0 auto", textAlign: "center" }}>
+                    <article className="col margin-bottom--lg" style={{margin: "0 auto", textAlign: "center"}}>
                         <h2>
                             More questions?
                         </h2>
-                        <p>If you have trouble finding what you need, we are here to help!<br/>Send us a message on <a href="mailto:questions@smithy.security">questions@smithy.security</a> and we'll get back to you shortly.</p>
+                        <p>If you have trouble finding what you need, we are here to help!<br/>Send us a message on <a
+                            href="mailto:info@smithy.security">info@smithy.security</a> and we'll get back to you
+                            shortly.</p>
                     </article>
                 </section>
             </div>
