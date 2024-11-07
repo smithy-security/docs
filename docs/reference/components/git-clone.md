@@ -5,14 +5,17 @@ title: 'Git Clone'
 description: 'Source component that clones a repository for scanning'
 sidebar_position: 1
 ---
-# Git Clone 
+
+# Git Clone
 
 This source component lets Smithy clone a repository from GitHub, GitLab or BitBucket.
 
 ## How to use
 
 ### Open-Source
-1. Add the Git clone helm package to the pipeline settings:
+
+1. Add the Git clone Helm package to the pipeline settings:
+
 ```
 ---
 # file: ./my-pipeline/kustomization.yaml
@@ -20,7 +23,9 @@ kind: Kustomization
 components:
   - pkg:helm/smithy-security-oss-components/git-clone
 ```
+
 2. Configure the run parameters of the component in the pipeline run file:
+
 ```
 # file: ./my-pipeline/pipelinerun.yaml
 ---
@@ -34,9 +39,11 @@ spec:
 ```
 
 ### SaaS
+
 1. In the Smithy UI, open the page to create a new workflow.
 2. Find the Git Clone in the Sources dropdown.
-3. Set the URL of your repository on the right. If your repository is private, read [below](/docs/reference/components/git-clone#cloning-a-private-repository).
+3. Set the URL of your repository on the right. If your repository is private,
+   read [below](/docs/reference/components/git-clone#cloning-a-private-repository).
 
 All other settings are optional.
 
