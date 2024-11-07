@@ -5,3 +5,7 @@ sidebar_position: 1
 ---
 
 # Requirements for hosting Smithy on premises
+
+You can choose whether Smithy runs on your own cluster or in the cloud.  
+If you decide to run it on-premises, all we need is a Kubernetes namespace and a PostgreSQL Database.  
+Smithy does not need admin permissions to run on your Kubernetes cluster.  
