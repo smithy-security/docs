@@ -37,6 +37,8 @@ spec:
   params:
   - name: producer-snyk-docker-api-key
     value: <your snyk api key>
+  - name: producer-snyk-docker-image
+    value: <the docker image you are trying to scan>
 ```
 
 ### SaaS
