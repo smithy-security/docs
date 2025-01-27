@@ -8,41 +8,52 @@ sidebar_position: 17
 
 # PDF
 
-Consumer component that prints findings a PDF document. It then pushes the PDF into an AWS S3 bucket.
+Consumer component that prints findings a PDF document. It then pushes the PDF
+into an AWS S3 bucket.
 
 ## How to use
 
+### Your S3 bucket
+
+On AWS, create a new s3 bucket.
+Then create a system user via IAM, where you only give that user access to
+the S3 buckets.
+Get that user's access key ID and secret
+
 ### Open-Source
 
-1. Add the Helm package to the pipeline settings:
+1. Configure the run parameters of the component in the component's .env file:
 
 ```
 ---
-# file: ./my-pipeline/kustomization.yaml
-kind: Kustomization
-components:
-  - pkg:helm/smithy-security-oss-components/consumer-pdf
+# file: ./new-components/reporters/pdf/.env
+AWS_ACCESS_KEY_ID=''
+AWS_SECRET_ACCESS_KEY=''
+BUCKET_NAME='pdf-consumer-test'
+BUCKET_REGION='eu-north-1'
+SKIP_S3_UPLOAD=false
 ```
 
-2. Configure the run parameters of the component in the pipeline run file:
+2. Add the component to the pipeline's docker-compose:
 
 ```
-# file: ./my-pipeline/pipelinerun.yaml
+# file: ./new-components/docker-compose.yaml
 ---
 ...
-spec:
-  params:
-  - name: consumer-pdf-s3-access-key-id
-    value: <Your S3 access key ID>
-  - name: consumer-pdf-s3-secret-access-key
-    value: <Your S3 access key>
-  - name: consumer-pdf-s3-bucket-name
-    value: <Your S3 bucket name>
-  - name: consumer-pdf-s3-bucket-region
-    value: <Your S3 bucket region>
-  - name: consumer-pdf-template-location
-    value: <path to your pdf template in HTML>
+  pdf-reporter:
+    build:
+      context: reporters/pdf
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    env_file:
+      - reporters/pdf/.env
+    depends_on:
+      enricher:
+        condition: service_completed_successfully
 ```
+
+3. Run your pipeline with
+   `docker-compose up --build --force-recreate --remove-orphans`
 
 ### SaaS
 
@@ -53,12 +64,13 @@ spec:
 
 ## Options
 
-You can configure this component with the following options. The options that have a default value are optional:
+You can configure this component with the following options in your .env
+file, or in the docker-compose:
 
-| Option Name                                      | Description                       | Default                                      | Type   |
-|--------------------------------------------------|-----------------------------------|----------------------------------------------|--------|
-| **[Required]** consumer-pdf-s3-access-key-id     | Your S3 access key ID             |                                              | String |
-| **[Required]** consumer-pdf-s3-secret-access-key | Your S3 access key                |                                              | String |
-| **[Required]** consumer-pdf-s3-bucket-name       | Your S3 bucket name               |                                              | String |
-| **[Required]** consumer-pdf-s3-bucket-region     | Your S3 bucket region             |                                              | String |
-| consumer-pdf-template-location                   | Path to your PDF template in HTML | "/app/components/consumers/pdf/default.html" | String |
+| Environment Variable     | Type   | Required | Default | Description                                                          |
+|--------------------------|--------|----------|---------|----------------------------------------------------------------------|
+| AWS\_ACCESS\_KEY\_ID     | string | yes      | -       | Your S3 access key ID for a user that has write access to the bucket |
+| AWS\_SECRET\_ACCESS\_KEY | string | yes      | -       | Your S3 access key for a user that has write access to the bucket    |
+| BUCKET\_NAME             | string | yes      | -       | Your S3 bucket name, e.g. "test-bucket"                              |
+| BUCKET\_REGION           | string | yes      | -       | Your S3 bucket region, e.g. "us-west-1"                              |
+| SKIP\_S3\_UPLOAD         | bool   | yes      | false   | Skip the upload to S3, for local debugging                           |
