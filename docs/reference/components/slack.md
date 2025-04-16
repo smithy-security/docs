@@ -1,50 +1,41 @@
----
-sidebar_custom_props:
-  icon: "/img/components/slack.svg"
+***
+
+sidebar\_custom\_props:
+icon: "/img/components/slack.svg"
 title: 'Slack'
-description: 'Consumer component that pushes findings to a Slack channel.'
-sidebar_position: 15
----
+description: 'Reporter component that pushes a summary of a scan to a Slack channel.'
+sidebar\_position: 15
+---------------------
 
 # Slack
 
-Consumer component that pushes findings to your Slack. Read more about
+Reporter component that pushes a summary of a scan to your Slack. Read more about
 Slack [here](https://slack.com/intl/en-gb/).
 
 ## How to use
 
 ### Open-Source
 
-1. Add the Helm package to the pipeline settings:
+There is an example workflow in the smithy repository.
+After you have cloned the repo, you can run:
 
-```
----
-# file: ./my-pipeline/kustomization.yaml
-kind: Kustomization
-components:
-  - pkg:helm/smithy-security-oss-components/consumer-slack
+```bash
+$ smithyctl \
+  workflow run \
+    --overrides-path=./examples/slack/overrides.yaml \
+    --build-component-images \
+      ./examples/slack/workflow.yaml
 ```
 
-2. Configure the run parameters of the component in the pipeline run file:
-
-```
-# file: ./my-pipeline/pipelinerun.yaml
----
-...
-spec:
-  params:
-  - name: consumer-slack-webhook
-    value: <Your Slack webhook URL>
-  - name: consumer-slack-message-template
-    value: <Your Slack message template>
-```
+*Warning*: You need to configure a slack webhook before using this workflow
 
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find the Slack component in the Consumers dropdown.
-3. Click on the Slack flow icon to bring the form to the top
-4. Fill the form on the right
+2. Setup any workflow which should produce vulnerabilities.
+3. Find the Slack component in the reporters dropdown.
+4. Click on the Slack flow icon to bring the form to the top
+5. Fill the form on the right with a webhook
 
 ## Options
 
@@ -52,5 +43,4 @@ You can configure this component with the following options. :
 
 | Option Name                           | Description                                                                                                                            | Default                                                                                                                      | Type   |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------|
-| **[Required]** consumer-slack-webhook | The Slack webhook to send messages to. Follow this guide to generate: https://api.slack.com/messaging/webhooks                         | ""                                                                                                                           | String |
-| consumer-slack-message-template       | The message template to use when sending messages to Slack. You can use: `<scanID>`, `<scanStartTime>`, `<numResults>`, `<newResults>` | ```Smithy scan <scanID>, started at <scanStartTime>, completed with <numResults> findings, out of which, <newResults> new``` | String |
+| **\[Required]** slack\_webhook | The Slack webhook to send messages to. Follow this guide to generate: https://api.slack.com/messaging/webhooks                         | ""                                                                                                                           | String |
