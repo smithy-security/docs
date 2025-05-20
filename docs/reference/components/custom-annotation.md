@@ -1,10 +1,9 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/stdout-json.svg"
+---
+sidebar_custom_props:
+    icon: "/img/components/custom-annotation.svg"
 title: 'Custom Annotation'
 description: 'Enricher component that adds a custom annotation to findings. Mainly used for testing.'
-sidebar\_position: 16
+sidebar_position: 16
 ---------------------
 
 # Custom Annotation

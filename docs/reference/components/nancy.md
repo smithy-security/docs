@@ -1,30 +1,47 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/nancy.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/nancy.svg"
 title: 'Nancy'
 description: 'Dependency Scanner for Go.'
-sidebar\_position: 5
---------------------
+sidebar_position: 5
+---
 
 # Nancy
 
 This scanner component runs the sonatype's open source SCA for Go, Nancy.
+You can find more about nancy in its [repository](https://github.com/sonatype-nexus-community/nancy) 
 
 ## How to use with Smithy
 
 ### Open-Source
 
-There is an example workflow in the smithy repository.
-After you have cloned the repo, you can run:
+1. Add the component to the workflow
 
-```bash
-$ smithyctl \
-  workflow run \
-    --overrides-path=./examples/golang/overrides.yaml \
-    --build-component-images \
-      ./examples/golang/workflow.yaml
 ```
+---
+# file: ./my-workflow/workflow.yaml
+description: Nancy based workflow
+name: nancy
+components:
+- component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+```
+
+2. Configure the run parameters of the component in the overrides file
+
+```
+# file: ./my-workflow/overrides.yaml
+git-clone:
+- name: "repo_url"
+  type: "string"
+  value: "https://github.com/0c34/govwa.git"
+- name: "reference"
+  type: "string"
+  value: "master"
+```
+
 
 ### SaaS
 

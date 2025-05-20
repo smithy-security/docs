@@ -1,11 +1,10 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/mobsfscan.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/mobsfscan.svg"
 title: 'MobSFScan'
 description: 'SAST Scanner for mobile applications.'
-sidebar\_position: 5
---------------------
+sideba\_position: 5
+---
 
 # MobSF Scan
 
@@ -15,16 +14,34 @@ This scanner component runs the popular open source SAST for mobile applications
 
 ### Open-Source
 
-There is an example workflow in the smithy repository.
-After you have cloned the repo, you can run:
 
-```bash
-$ smithyctl \
-  workflow run \
-    --overrides-path=./examples/mobsfscan/overrides.yaml \
-    --build-component-images \
-      ./examples/mobsfscan/workflow.yaml
+1. Add the component to the workflow
+
 ```
+---
+# file: ./my-workflow/workflow.yaml
+description: Nancy based workflow
+name: nancy
+components:
+- component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/mobsfscan:v1.1.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+```
+
+2. Configure the run parameters of the component in the overrides file
+
+```
+# file: ./my-workflow/overrides.yaml
+git-clone:
+- name: "repo_url"
+  type: "string"
+  value: "https://github.com/0c34/govwa.git"
+- name: "reference"
+  type: "string"
+  value: "master"
+```
+
 
 ### SaaS
 

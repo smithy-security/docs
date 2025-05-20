@@ -1,10 +1,9 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/cdxgen.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/cdxgen.svg"
 title: 'CDXGen'
 description: 'Scanner component that generates a CycloneDX SBOM from source code.'
-sidebar\_position: 5
+sidebar_position: 5
 --------------------
 
 # CDXGEN
@@ -23,15 +22,37 @@ This component does not do anything else currently.
 
 ### Open-Source
 
-There is an example workflow in the smithy repository.
-After you have cloned the repo, you can run:
+```
+# file ./my-workflow/workflow.yml
+description: Workflow scanning with cdxgen
+name: cdxgen
+components:
+- component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/cdxgen:v1.2.2
+```
 
-```bash
-$ smithyctl \
-  workflow run \
-    --overrides-path=./examples/cdxgen/overrides.yaml \
-    --build-component-images \
-      ./examples/cdxgen/workflow.yaml
+2. Configure the run parameters of the component in the overrides file
+
+```
+# file: ./my-workflow/overrides.yaml
+git-clone:
+- name: "repo_url"
+  type: "string"
+  value: "https://github.com/sqreen/go-dvwa"
+cdxgen:
+- name: "backend_server_url"
+  type: "string"
+  value: ""
+- name: "api_key"
+  type: "string"
+  value: ""
+- name: "project_name"
+  type: "string"
+  value: ""
+- name: "project_version"
+  type: "string"
+  value: ""
+
 ```
 
 ### SaaS

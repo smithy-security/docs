@@ -1,10 +1,9 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/codeql.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/codeql.svg"
 title: 'CodeQL'
 description: 'Scanner that runs Github CodeQL SAST.'
-sidebar\_position: 5
+sidebar_position: 5
 --------------------
 
 # CodeQL
@@ -17,15 +16,29 @@ The default CodeQL rules for each language are used to scan.
 
 ### Open-Source
 
-There is an example workflow in the smithy repository.
-After you have cloned the repo, you can run:
+```
+# file ./my-workflow/workflow.yml
+description: Workflow scanning with codeql
+name: codeql
+components:
+- component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/codeql:v1.3.0
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+```
 
-```bash
-$ smithyctl \
-  workflow run \
-    --overrides-path=./examples/codeql/overrides.yaml \
-    --build-component-images \
-      ./examples/codeql/workflow.yaml
+2. Configure the run parameters of the component in the overrides file
+
+```
+# file: ./my-workflow/overrides.yaml
+git-clone:
+- name: "repo_url"
+  type: "string"
+  value: "https://github.com/0c34/govwa.git"
+- name: "reference"
+  type: "string"
+  value: "master"
 ```
 
 ### SaaS
