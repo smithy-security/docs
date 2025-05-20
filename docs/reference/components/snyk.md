@@ -1,18 +1,16 @@
 ***
 
 sidebar\_custom\_props:
-icon: "/img/components/semgrep.svg"
-title: 'Semgrep'
-description: 'Scanner component that runs Semgrep/Opengrep.'
+icon: "/img/components/snyk.svg"
+title: 'Snyk'
+description: 'Scanner component that runs `snyk test` against a codebase.'
 sidebar\_position: 6
 --------------------
 
-# Semgrep
+# Snyk
 
-This scanner component analyses source code with Semgrep to look for security issues.
-
-Read more about what it does on the [Semgrep homepage](https://semgrep.dev/)
-and [GitHub repo](https://github.com/semgrep/semgrep).
+This scanner component analyses dependencies with snyk to look for security issues.
+You don't need to select the individual snyk containers per technology anymore, the scanner has a single image for all ecosystems snyk supports.
 
 ## How to use with Smithy
 
@@ -24,16 +22,16 @@ After you have cloned the repo, you can run:
 ```bash
 $ smithyctl \
   workflow run \
-    --overrides-path=./examples/semgrep/overrides.yaml \
+    --overrides-path=./examples/snyk/overrides.yaml \
     --build-component-images \
-      ./examples/semgrep/workflow.yaml
+      ./examples/snyk/workflow.yaml
 ```
 
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find Semgrep in the Producers dropdown.
-3. Configure the parameters in the form on the right
+2. Find snyk in the Producers dropdown.
+3. Configure the token in the form on the right
 
 ## Options
 
@@ -41,4 +39,4 @@ You can configure this component with the following options. The values are opti
 
 | Option Name                   | Description                                                                            | Default     | Type        |
 |-------------------------------|----------------------------------------------------------------------------------------|-------------|-------------|
-| ruleset   | Any rule you want to configure semgrep with | "p/default" | string |
+| snyk\_token   | The token from snyk, this is used for `snyk login` | "" | string |

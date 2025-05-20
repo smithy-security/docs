@@ -1,11 +1,10 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/git-clone.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/git-clone.svg"
 title: 'Git Clone'
 description: 'Source component that shallow clones a repository for scanning'
-sidebar\_position: 1
---------------------
+sidebar_position: 1
+---
 
 # Git Clone
 
@@ -15,7 +14,7 @@ This source component lets Smithy clone a repository from GitHub, GitLab or BitB
 
 ### Open-Source
 
-Most SAST based workflows, e.g. `examples/bandit` depend on `git-clone`.
+Most SAST based workflows, e.g. `examples/bandit` depend on `git-clone`
 
 ### SaaS
 
@@ -27,15 +26,14 @@ Most SAST based workflows, e.g. `examples/bandit` depend on `git-clone`.
 All other settings are optional.
 
 ### Cloning a private repository
-
 **Github:**
 If you want to clone a private repository you have two choices:
-
 * install the Smithy github application in your repository or organization, then git-clone receives tokens automatically.
 * Create a  private github token and set it for every repository as shown below
-  `https://<pat>@github.com/<your account or organization>/<repo>.git`
-  You can generate a PAT token on GitHub via your account settings. Read the precise
-  instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). **This is insecure as github tokens are longer lived than necessary**
+`https://<pat>@github.com/<your account or organization>/<repo>.git`
+You can generate a PAT token on GitHub via your account settings. Read the precise
+instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+). **This is insecure as github tokens are longer lived than necessary**
 
 **Gitlab:**
 If you want to clone a private repository from Gitlab, currently you can only do so via private tokens in the same way as github
@@ -49,5 +47,5 @@ You can configure this component with the following options. The options that ha
 
 | Option Name                         | Description                                                                                                                            | Default                                                                    | Type    |
 |-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|
-| **\[Required]** repo\_url        | Repository URL to clone |N/A| String  |
-| **\[Required]** reference        | Ref to clone the repository at (branch,tag or commit sha) |"main"| String  |
+| **[Required]** repo_url        | Repository URL to clone |N/A| String  |
+| **[Required]** reference        | Ref to clone the repository at (branch,tag or commit sha) |"main"| String  |

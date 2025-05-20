@@ -49,23 +49,8 @@ const config: Config = {
       items: [
         {
           position: "left",
-          label: "Quickstart",
-          to: "/docs/oss/quickstart",
-        },
-        {
-          position: "left",
-          label: "Open-Source",
-          to: "/docs/category/smithy-open-source",
-        },
-        {
-          position: "left",
           label: "SaaS",
           to: "/docs/category/saas",
-        },
-        {
-          position: "left",
-          label: "Components",
-          to: "/docs/category/components",
         },
         {
           position: "left",
@@ -85,20 +70,8 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Quickstart",
-              to: "/docs/oss/quickstart",
-            },
-            {
-              label: "Open-Source",
-              to: "/docs/category/smithy-open-source",
-            },
-            {
               label: "SaaS",
               to: "/docs/category/saas",
-            },
-            {
-              label: "Components",
-              to: "/docs/category/components",
             },
             {
               label: "Reference",

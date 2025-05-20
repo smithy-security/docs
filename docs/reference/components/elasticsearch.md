@@ -1,56 +1,41 @@
----
-sidebar_custom_props:
-  icon: "/img/components/elasticsearch.svg"
+***
+
+sidebar\_custom\_props:
+icon: "/img/components/elasticsearch.svg"
 title: 'ElasticSearch'
-description: 'Consumer component that pushes findings to an ElasticSearch database.'
-sidebar_position: 14
----
+description: 'Reporter component that pushes findings to an ElasticSearch.'
+sidebar\_position: 14
+---------------------
 
 # ElasticSearch
 
-Consumer component that pushes findings to an ElasticSearch instance. Read more about
+Reporter component that pushes findings to an ElasticSearch instance. Read more about
 ElasticSearch [here](https://kagi.com/search?q=elasticsearch).
 
 ## How to use
 
 ### Open-Source
 
-1. Add the Helm package to the pipeline settings:
+There is an example workflow in the smithy repository.
+After you have cloned the repo, you can run:
 
-```
----
-# file: ./my-pipeline/kustomization.yaml
-kind: Kustomization
-components:
-  - pkg:helm/smithy-security-oss-components/consumer-elasticsearch
+```bash
+$ smithyctl \
+  workflow run \
+    --overrides-path=./examples/elasticsearch/overrides.yaml \
+    --build-component-images \
+      ./examples/elasticsearch/workflow.yaml
 ```
 
-2. Configure the run parameters of the component in the pipeline run file:
-
-```
-# file: ./my-pipeline/pipelinerun.yaml
----
-...
-spec:
-  params:
-  - name: consumer-elasticsearch-url
-    value: <Your ES URL>
-  - name: consumer-elasticsearch-description-template
-    value: <Your description template>
-  - name: consumer-elasticsearch-api-key
-    value: <ES API key>
-  - name: consumer-elasticsearch-index-name
-    value: <ES index to push to>
-  - name: consumer-elasticsearch-cloud-id
-    value: <ES cloud ID>
-```
+*Warning*: You need to configure secrets and other parameters for elasticsearch in order for the workflow to work.
 
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find the ElasticSearch component in the Consumers dropdown.
-3. Click on the ElasticSearch flow icon to bring the form to the top
-4. Fill the form on the right
+2. Configure any workflow that produces vulnerabilities (e.g. sast, sca, container scanner etc)
+3. Find the elasticsearch component in the reporters dropdown.
+4. Click on the elasticsearch icon to bring the form to the top
+5. Fill the form on the right
 
 ## Options
 
@@ -58,8 +43,6 @@ You can configure this component with the following options:
 
 | Option Name                                 | Description                                                        | Default | Type   |
 |---------------------------------------------|--------------------------------------------------------------------|---------|--------|
-| consumer-elasticsearch-url                  | URL of your ElasticSearch instance                                 | ""      | String |
-| consumer-elasticsearch-description-template | A Go Template string describing how to show Raw or Enriched issues | ""      | String |
-| consumer-elasticsearch-api-key              | API key for your ElasticSearch instance                            | ""      | String |
-| consumer-elasticsearch-index-name           | The index in ElasticSearch to push results to                      | ""      | String |
-| consumer-elasticsearch-cloud-id             | The cloud id in ElasticSearch to contact results to                | ""      | String |
+| elasticsearch\_url                  | URL of your ElasticSearch instance **Warning**: if you provisioned an elasticsearch from any cloud provider or their page, you will see their frontend "Kibana", this component needs the Elasticsearch URL not the Kibana frontend. You can find the elasticsearch url under the API Integrations menu.                                 | ""      | String |
+| elasticsearch\_index | what index to write the results to | ""      | String |
+| elasticsearch\_api\_key | API key for your ElasticSearch instance. The API key requires reading cluster's information in order for the  component to validate connectivity and write to any indexes you plan on using this component with. | ""      | String |
