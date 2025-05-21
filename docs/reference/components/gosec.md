@@ -1,11 +1,10 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/gosec.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/gosec.svg"
 title: 'Gosec'
 description: 'Scanner that runs the Gosec SAST for Go.'
-sidebar\_position: 5
---------------------
+sidebar_position: 5
+---
 
 # Gosec
 
@@ -15,21 +14,35 @@ This scanner component runs the popular open source SAST Gosec.
 
 ### Open-Source
 
-There is an example workflow in the smithy repository.
-After you have cloned the repo, you can run:
+```
+# file ./my-workflow/workflow.yml
+description: Workflow scanning with gosec
+name: gosec
+components:
+- component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+```
 
-```bash
-$ smithyctl \
-  workflow run \
-    --overrides-path=./examples/golang/overrides.yaml \
-    --build-component-images \
-      ./examples/golang/workflow.yaml
+2. Configure the run parameters of the component in the overrides file
+
+```
+# file: ./my-workflow/overrides.yaml
+git-clone:
+- name: "repo_url"
+  type: "string"
+  value: "https://github.com/0c34/govwa.git"
+- name: "reference"
+  type: "string"
+  value: "master"
 ```
 
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find CodeQL in the Scanners dropdown. Click to add it to the workflow.
+2. Find Gosec in the Scanners section. Click to add it to the workflow.
 3. Run the workflow as normal.
 
 ## Options

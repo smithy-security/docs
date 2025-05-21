@@ -1,11 +1,10 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/reachability.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/reachability.svg"
 title: 'Reachability Enricher'
 description: 'Enricher component that adds a `reachable` annotation to every finding.'
-sidebar\_position: 16
----------------------
+sidebar_position: 16
+---
 
 # Reachability
 
@@ -24,15 +23,32 @@ This component automatically runs for every language atom supports. Currently th
 
 ### Open-Source
 
-There is an example workflow in the smithy repository.
-After you have cloned the repo, you can run:
 
-```bash
-$ smithyctl \
-  workflow run \
-    --overrides-path=./examples/reachability/overrides.yaml \
-    --build-component-images \
-      ./examples/reachability/workflow.yaml
+1. Add the component to the workflow:
+
+```
+---
+# file: ./my-workflow/workflow.yaml
+description: Reachability based workflow
+name: reachability
+components:
+- component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/semgrep:v1.2.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/reachability:v0.3.0
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+```
+
+2. Configure the run parameters of the component in the overrides file:
+
+```
+# file: ./my-pipeline/pipelinerun.yaml
+git-clone:
+- name: "repo_url"
+  type: "string"
+  value: "https://github.com/0c34/govwa.git"
+- name: "reference"
+  type: "string"
+  value: "master"
 ```
 
 ### SaaS

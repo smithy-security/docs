@@ -1,11 +1,10 @@
-***
-
-sidebar\_custom\_props:
-icon: "/img/components/trivy.svg"
+---
+sidebar_custom_props:
+  icon: "/img/components/trivy.svg"
 title: 'Trivy'
-description: 'Scanner component that runs Aquasec's Trivy against a container image.'
-sidebar\_position: 6
---------------------
+description: "Scanner that runs Aquasec's Trivy against a container image."
+sidebar_position: 6
+---
 
 # Trivy
 
@@ -15,23 +14,45 @@ This scanner component analyses containers with `trivy` to look for security iss
 
 ### Open-Source
 
-There is an example workflow in the smithy repository.
-After you have cloned the repo, you can run:
 
-```bash
-$ smithyctl \
-  workflow run \
-    --overrides-path=./examples/trivy/overrides.yaml \
-    --build-component-images \
-      ./examples/trivy/workflow.yaml
+1. Add the component to the workflow:
+
 ```
+# file ./my-workflow/workflow.yml
+description: Trufflehog based workflow
+name: trufflehog
+components:
+- component: ghcr.io/smithy-security/smithy/manifests/components/targets/image-get:v1.1.15
+- component:  ghcr.io/smithy-security/smithy/manifests/components/scanners/trivy:v1.2.3
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+
+```
+
+2. Configure the run parameters of the component in the overrides file:
+
+```
+# file: ./my-workflow/overrides.yaml
+image-get:
+  - name: image
+    type: string
+    value: "ubuntu:latest"
+  - name: username
+    type: string
+    value: ""
+  - name: password
+    type: string
+    value: ""
+```
+
 
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Find trivy in the Producers dropdown.
-3. configure trivy to point to your image and optionally configure credentials
-4. Run the workflow as normal
+2. Add the image-get target
+3. Configure image-get to pull your image and optional authentication credentials
+4. Find trivy in the Producers dropdown.
+5. Run the workflow as normal
 
 ## Options
 
