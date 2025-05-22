@@ -4,7 +4,7 @@ sidebar_custom_props:
 title: 'Jira'
 description: 'Jira reporter that opens formatted issues for every non-filtered finding.'
 sidebar_position: 17
----------------------
+---
 
 # Jira
 
@@ -57,7 +57,6 @@ jira:
   value: "$password"
 ```
 
-
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
@@ -67,14 +66,15 @@ jira:
 
 ## Options
 
-You can configure this component with the following options. The options that have a default value are optional:
+You can configure this component with the following options. The options that
+have a default value are optional:
 
-| Option Name |  Description | Default | Type    |
-|-------------------------|--------------------------------------------------------------------------------------------------|---------|---------|
+| Option Name               | Description                                                                                      | Default | Type    |
+|---------------------------|--------------------------------------------------------------------------------------------------|---------|---------|
 | **\[Required]** base\_url | Base URL of the Jira server                                                                      |         | String  |
-| **\[Required]** project  | Project in Jira where to open issues to | | String  |
-| issue\_type | The issue type to open (taksk, bug, something else) | Task    | String  |
-| auth\_enabled | Whether auth should be enabled or not | false   | Boolean |
-| username | The auth username | | String  |
-| password | The auth password or auth token | | String  |
-| client\_max\_retries | Optional parameter to configure how many times the client should retry on retryable status codes | 10      | Number  |
+| **\[Required]** project   | Project in Jira where to open issues to                                                          |         | String  |
+| issue\_type               | The issue type to open (taksk, bug, something else)                                              | Task    | String  |
+| auth\_enabled             | Whether auth should be enabled or not                                                            | false   | Boolean |
+| username                  | The auth username                                                                                |         | String  |
+| password                  | The auth password or auth token                                                                  |         | String  |
+| client\_max\_retries      | Optional parameter to configure how many times the client should retry on retryable status codes | 10      | Number  |
