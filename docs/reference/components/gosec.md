@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/gosec.svg"
+  icon: "/img/components/golang-gosec.png"
 title: 'Gosec'
 description: 'Scanner that runs the Gosec SAST for Go.'
 sidebar_position: 5

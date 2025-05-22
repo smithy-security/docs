@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/mobsfscan.svg"
+  icon: "/img/components/mobsf.svg"
 title: 'MobSFScan'
 description: 'SAST Scanner for mobile applications.'
 sideba\_position: 5
@@ -8,12 +8,12 @@ sideba\_position: 5
 
 # MobSF Scan
 
-This scanner component runs the popular open source SAST for mobile applications MobSFScan.
+This scanner component runs the popular open source SAST for mobile applications
+MobSFScan.
 
 ## How to use with Smithy
 
 ### Open-Source
-
 
 1. Add the component to the workflow
 
@@ -42,11 +42,11 @@ git-clone:
   value: "master"
 ```
 
-
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Add a git-clone target and configure it to point to a repository with the source code for a mobile application.
+2. Add a git-clone target and configure it to point to a repository with the
+   source code for a mobile application.
 3. Find MobSF in the Scanners dropdown. Click to add it to the workflow.
 4. Run the workflow as normal.
 
