@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/osv-scanner.svg"
+  icon: "/img/components/osv.png"
 title: 'OSV Scanner'
 description: 'Third Party Dependency Scanner for multiple languages'
 sidebar_position: 4
@@ -9,7 +9,8 @@ sidebar_position: 4
 # OSV Scanner
 
 This scanner scans third party dependencies of multiple languages.
-Read more about what it does on the [osv-scanner page](https://google.github.io/osv-scanner/)
+Read more about what it does on
+the [osv-scanner page](https://google.github.io/osv-scanner/)
 
 ## How to use with Smithy
 
@@ -48,4 +49,5 @@ git-clone:
 2. Find osv-scanner in the scanners dropdown.
 
 ## Options
+
 This component does not accept parameterization.
