@@ -6,7 +6,7 @@ description: 'Reporter that prints findings into a templated PDF document.'
 sidebar_position: 17
 ---
 
-# PDF
+# PDF document
 
 Reporter component that prints findings in a templated PDF document.
 It then pushes the PDF into an AWS S3 bucket.
