@@ -15,8 +15,6 @@ sends them downstream for processing.
 
 ### Open-Source
 
-### Open-Source
-
 1. Add the component to the workflow:
 
 ```yaml
@@ -24,10 +22,10 @@ sends them downstream for processing.
 description: Semgrep based workflow
 name: semgrep
 components:
-- component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/bandit:v1.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/bandit:v1.1.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
 ```
 
 2. Configure the run parameters of the component in the overrides file. All
@@ -36,12 +34,12 @@ components:
 ```yaml
 # file: ./my-pipeline/pipelinerun.yaml
 git-clone:
-- name: "repo_url"
-  type: "string"
-  value: "https://github.com/0c34/govwa.git"
-- name: "reference"
-  type: "string"
-  value: "master"
+  - name: "repo_url"
+    type: "string"
+    value: "https://github.com/0c34/govwa.git"
+  - name: "reference"
+    type: "string"
+    value: "master"
 ```
 
 ### SaaS
