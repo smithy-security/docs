@@ -9,8 +9,10 @@ sidebar_position: 9
 # Snyk
 
 This is a scanner component.
-This component runs snyk-cli in an image supporting all technologies that snyk-cli requires to run.
-It requires a snyk token to run and you can optionally define proxies to connect to snyk through.
+This component runs snyk-cli in an image supporting all technologies that
+snyk-cli requires to run.
+It requires a snyk token to run and you can optionally define proxies to connect
+to snyk through.
 
 Read more about what it does on the [Snyk homepage](https://snyk.io/)
 and [GitHub repo](https://github.com/snyk/snyk-cli).
@@ -21,33 +23,34 @@ and [GitHub repo](https://github.com/snyk/snyk-cli).
 
 1. Add the component to the workflow:
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Snyk based workflow
 name: snyk
 components:
-- component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/snyk:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/snyk:v0.1.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
 
 ```
 
-2. Configure the parameter overrides of the components in the workflow overrides file.
+2. Configure the parameter overrides of the components in the workflow overrides
+   file.
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
-- name: "repo_url"
-  type: "string"
-  value: ""
-- name: "reference"
-  type: "string"
-  value: "master"
+  - name: "repo_url"
+    type: "string"
+    value: ""
+  - name: "reference"
+    type: "string"
+    value: "master"
 snyk:
-- name: "snyk_token"
-  type: "string"
-  value: ""
+  - name: "snyk_token"
+    type: "string"
+    value: ""
 
 ```
 
@@ -61,6 +64,6 @@ snyk:
 
 You can configure this component with the following options:
 
-| Option Name                                 | Description                                                           | Default | Type   |
-|---------------------------------------------|-----------------------------------------------------------------------|---------|--------|
-| **[Required]** snyk_token | Snyk API key| | String |
+| Option Name               | Description  | Default | Type   |
+|---------------------------|--------------|---------|--------|
+| **[Required]** snyk_token | Snyk API key |         | String |

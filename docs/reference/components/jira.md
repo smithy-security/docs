@@ -16,7 +16,7 @@ Reporter that opens formatted issues for every non-filtered finding.
 
 1. Add the component to the workflow:
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow reporting to a pdf
 name: pdf
@@ -30,7 +30,7 @@ components:
 
 2. Configure the run parameters of the component in the overrides file:
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"

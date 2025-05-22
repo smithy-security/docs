@@ -17,8 +17,7 @@ MobSFScan.
 
 1. Add the component to the workflow
 
-```
----
+```yaml
 # file: ./my-workflow/workflow.yaml
 description: Nancy based workflow
 name: nancy
@@ -31,7 +30,7 @@ components:
 
 2. Configure the run parameters of the component in the overrides file
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"

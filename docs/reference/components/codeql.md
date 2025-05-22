@@ -17,7 +17,7 @@ The default CodeQL rules for each language are used to scan.
 
 ### Open-Source
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow scanning with codeql
 name: codeql
@@ -31,7 +31,7 @@ components:
 
 2. Configure the run parameters of the component in the overrides file
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"

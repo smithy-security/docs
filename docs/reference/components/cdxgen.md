@@ -23,7 +23,7 @@ This component does not do anything else currently.
 
 ### Open-Source
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow scanning with cdxgen
 name: cdxgen
@@ -34,7 +34,7 @@ components:
 
 2. Configure the run parameters of the component in the overrides file
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"

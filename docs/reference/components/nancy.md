@@ -9,7 +9,8 @@ sidebar_position: 5
 # Nancy
 
 This scanner component runs the sonatype's open source SCA for Go, Nancy.
-You can find more about nancy in its [repository](https://github.com/sonatype-nexus-community/nancy) 
+You can find more about nancy in
+its [repository](https://github.com/sonatype-nexus-community/nancy)
 
 ## How to use with Smithy
 
@@ -17,8 +18,7 @@ You can find more about nancy in its [repository](https://github.com/sonatype-ne
 
 1. Add the component to the workflow
 
-```
----
+```yaml
 # file: ./my-workflow/workflow.yaml
 description: Nancy based workflow
 name: nancy
@@ -31,7 +31,7 @@ components:
 
 2. Configure the run parameters of the component in the overrides file
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"
@@ -42,11 +42,11 @@ git-clone:
   value: "master"
 ```
 
-
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Add a git-clone target and configure it to point to a repository with the source code for a golang application.
+2. Add a git-clone target and configure it to point to a repository with the
+   source code for a golang application.
 3. Find Nancy in the Scanners dropdown. Click to add it to the workflow.
 4. Run the workflow as normal.
 

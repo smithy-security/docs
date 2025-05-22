@@ -15,20 +15,19 @@ It supports both authenticated and unauthenticated scans.
 
 ### Open-Source
 
-```
----
+```yaml
 # file: ./my-workflow/workflow.yaml
 description: ZAP based workflow
 name: zap
 components:
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/zaproxy:v1.9.0
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/zaproxy:v1.9.0
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
 ```
 
 2. Configure the run parameters of the component in the overrides file
 
-```
+```yaml
 zaproxy:
   - name: target
     type: string

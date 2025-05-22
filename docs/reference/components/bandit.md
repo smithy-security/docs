@@ -8,7 +8,8 @@ sidebar_position: 3
 
 # Bandit
 
-This scanner runs the popular Python SAST Bandit, translates results to OCSF and sends them downstream for processing.
+This scanner runs the popular Python SAST Bandit, translates results to OCSF and
+sends them downstream for processing.
 
 ## How to use with Smithy
 
@@ -18,8 +19,7 @@ This scanner runs the popular Python SAST Bandit, translates results to OCSF and
 
 1. Add the component to the workflow:
 
-```
----
+```yaml
 # file: ./my-workflow/workflow.yaml
 description: Semgrep based workflow
 name: semgrep
@@ -30,9 +30,10 @@ components:
 - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
 ```
 
-2. Configure the run parameters of the component in the overrides file. All parameters are optional:
+2. Configure the run parameters of the component in the overrides file. All
+   parameters are optional:
 
-```
+```yaml
 # file: ./my-pipeline/pipelinerun.yaml
 git-clone:
 - name: "repo_url"
@@ -42,7 +43,6 @@ git-clone:
   type: "string"
   value: "master"
 ```
-
 
 ### SaaS
 

@@ -17,7 +17,7 @@ about ElasticSearch [here](https://kagi.com/search?q=elasticsearch).
 
 1. Add the component to the workflow:
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow reporting to elasticsearch
 name: elasticsearch
@@ -33,7 +33,7 @@ components:
 2. Configure the parameter overrides of the components in the workflow overrides
    file.
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"
