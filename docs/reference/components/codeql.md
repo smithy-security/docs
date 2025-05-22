@@ -4,19 +4,20 @@ sidebar_custom_props:
 title: 'CodeQL'
 description: 'Scanner that runs Github CodeQL SAST.'
 sidebar_position: 5
---------------------
+---
 
 # CodeQL
 
 This scanner component runs the popular SAST CodeQL.
-Before running codeql, the component autodetects all languages in a repository and configures CodeQL for all of them.
+Before running codeql, the component autodetects all languages in a repository
+and configures CodeQL for all of them.
 The default CodeQL rules for each language are used to scan.
 
 ## How to use with Smithy
 
 ### Open-Source
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow scanning with codeql
 name: codeql
@@ -30,7 +31,7 @@ components:
 
 2. Configure the run parameters of the component in the overrides file
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"

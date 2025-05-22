@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/gosec.svg"
+  icon: "/img/components/golang-gosec.png"
 title: 'Gosec'
 description: 'Scanner that runs the Gosec SAST for Go.'
 sidebar_position: 5
@@ -14,7 +14,7 @@ This scanner component runs the popular open source SAST Gosec.
 
 ### Open-Source
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow scanning with gosec
 name: gosec
@@ -28,7 +28,7 @@ components:
 
 2. Configure the run parameters of the component in the overrides file
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
 - name: "repo_url"

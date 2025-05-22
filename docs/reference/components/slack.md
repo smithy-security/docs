@@ -17,34 +17,35 @@ Slack [here](https://slack.com/intl/en-gb/).
 
 1. Add the component to the workflow:
 
-```
+```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow reporting to slack
 name: slack
 components:
-- component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/slack:v0.4.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/slack:v0.4.1
 
 ```
 
-2. Configure the parameter overrides of the components in the workflow overrides file.
+2. Configure the parameter overrides of the components in the workflow overrides
+   file.
 
-```
+```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
-- name: "repo_url"
-  type: "string"
-  value: "https://github.com/sqreen/go-dvwa"
-- name: "reference"
-  type: "string"
-  value: "master"
+  - name: "repo_url"
+    type: "string"
+    value: "https://github.com/sqreen/go-dvwa"
+  - name: "reference"
+    type: "string"
+    value: "master"
 slack:
-- name: "slack_webhook"
-  type: "string"
-  value: "Your webhook here"
+  - name: "slack_webhook"
+    type: "string"
+    value: "Your webhook here"
 
 ```
 
@@ -58,6 +59,6 @@ slack:
 
 You can configure this component with the following options:
 
-| Option Name                                 | Description                                                           | Default | Type   |
-|---------------------------------------------|-----------------------------------------------------------------------|---------|--------|
-| **[Required]** slack_webhook | Slack webhook| | String |
+| Option Name                  | Description   | Default | Type   |
+|------------------------------|---------------|---------|--------|
+| **[Required]** slack_webhook | Slack webhook |         | String |
