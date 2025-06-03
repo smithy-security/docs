@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/semgrep.svg"
+    icon: "/img/components/semgrep.svg"
 title: 'Semgrep'
 description: 'Scanner that analyses source code with Semgrep to look for security issues.'
 sidebar_position: 6
@@ -24,10 +24,10 @@ and [GitHub repo](https://github.com/semgrep/semgrep).
 description: Semgrep based workflow
 name: semgrep
 components:
-  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/semgrep:v1.2.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/semgrep:v1.2.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file:

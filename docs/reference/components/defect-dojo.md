@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/defectdojo.svg"
+   icon: "/img/components/defectdojo.svg"
 title: 'Defect Dojo'
 description: 'Reporter that pushes findings to a DefectDojo instance.'
 sidebar_position: 18
@@ -18,13 +18,13 @@ DefectDojo [here](https://www.defectdojo.org/).
 ```yaml
 # file ./my-workflow/workflow.yml
 description: Workflow scanning with gosec
-name: gosec
+name: defectdojo
 components:
 - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/defectdojo:v0.4.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/defectdojo:v0.4.2
 ```
 
 2. Configure the run parameters of the component in the overrides file

@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/smithy.svg"
+   icon: "/img/components/smithy.svg"
 title: 'Reachability'
 description: 'Enricher component that adds a `reachable` annotation to every finding.'
 sidebar_position: 16
@@ -33,10 +33,10 @@ these are:
 description: Reachability based workflow
 name: reachability
 components:
-  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/semgrep:v1.2.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/reachability:v0.3.0
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/semgrep:v1.2.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/reachability:v0.3.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file:

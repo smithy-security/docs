@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/nancy.svg"
+   icon: "/img/components/nancy.svg"
 title: 'Nancy'
 description: 'Dependency Scanner for Go.'
 sidebar_position: 5
@@ -23,10 +23,10 @@ its [repository](https://github.com/sonatype-nexus-community/nancy)
 description: Nancy based workflow
 name: nancy
 components:
-- component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+- component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file

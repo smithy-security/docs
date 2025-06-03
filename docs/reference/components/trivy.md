@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/trivy.svg"
+   icon: "/img/components/trivy.svg"
 title: 'Trivy'
 description: "Scanner that runs Aquasec's Trivy against a container image."
 sidebar_position: 6
@@ -19,13 +19,13 @@ issues.
 
 ```yaml
 # file ./my-workflow/workflow.yml
-description: Trufflehog based workflow
-name: trufflehog
+description: Trivy based workflow
+name: trivy
 components:
-  - component: ghcr.io/smithy-security/smithy/manifests/components/targets/image-get:v1.1.15
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/trivy:v1.2.3
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/targets/image-get:v1.1.16
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/trivy:v1.2.4
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 
 ```
 

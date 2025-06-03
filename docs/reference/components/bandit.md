@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/python-bandit.png"
+   icon: "/img/components/python-bandit.png"
 title: 'Bandit'
 description: 'SAST scanner that analyses Python source code to look for security issues.'
 sidebar_position: 3
@@ -20,12 +20,12 @@ sends them downstream for processing.
 ```yaml
 # file: ./my-workflow/workflow.yaml
 description: Semgrep based workflow
-name: semgrep
+name: bandit
 components:
-  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/bandit:v1.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/bandit:v1.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file. All

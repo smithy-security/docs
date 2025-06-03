@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/zap.svg"
+   icon: "/img/components/zap.svg"
 title: 'ZAP'
 description: 'Scanner that runs the Open Source DAST ZAP.'
 sidebar_position: 2
@@ -20,9 +20,9 @@ It supports both authenticated and unauthenticated scans.
 description: ZAP based workflow
 name: zap
 components:
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/zaproxy:v1.9.0
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/zaproxy:v1.11.3
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file

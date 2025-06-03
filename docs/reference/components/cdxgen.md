@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/cdxgen.svg"
+    icon: "/img/components/cdxgen.svg"
 title: 'CDXGen'
 description: 'Scanner component that generates a CycloneDX SBOM from source code.'
 sidebar_position: 5
@@ -53,7 +53,6 @@ cdxgen:
 - name: "project_version"
   type: "string"
   value: ""
-
 ```
 
 ### SaaS

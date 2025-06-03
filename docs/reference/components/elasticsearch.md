@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/elasticsearch.svg"
+   icon: "/img/components/elasticsearch.svg"
 title: 'ElasticSearch'
 description: 'Reporter that pushes findings to an ElasticSearch instance.'
 sidebar_position: 14
@@ -23,10 +23,10 @@ description: Workflow reporting to elasticsearch
 name: elasticsearch
 components:
 - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/elasticsearch:v1.0.0
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/elasticsearch:v1.0.1
 
 ```
 
