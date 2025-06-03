@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/pdf.svg"
+    icon: "/img/components/pdf.svg"
 title: 'PDF document'
 description: 'Reporter that prints findings into a templated PDF document.'
 sidebar_position: 17
@@ -23,10 +23,10 @@ description: Workflow reporting to a pdf
 name: pdf
 components:
   - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/pdf:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/pdf:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file:
@@ -68,7 +68,7 @@ have a default value are optional:
 
 | Option Name                          | Description           | Default | Type   |
 |--------------------------------------|-----------------------|---------|--------|
-| **[Required]** aws_access_key_id     | Your S3 access key ID |         | String |
-| **[Required]** aws_secret_access_key | Your S3 access key    |         | String |
-| **[Required]** bucket_name           | Your S3 bucket name   |         | String |
-| **[Required]** bucket_region         | Your S3 bucket region |         | String |
+| **\[Required]** aws\_access\_key\_id     | Your S3 access key ID |         | String |
+| **\[Required]** aws\_secret\_access\_key | Your S3 access key    |         | String |
+| **\[Required]** bucket\_name           | Your S3 bucket name   |         | String |
+| **\[Required]** bucket\_region         | Your S3 bucket region |         | String |

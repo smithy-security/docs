@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/slack.svg"
+   icon: "/img/components/slack.svg"
 title: 'Slack'
 description: 'Reporter that pushes findings to a Slack channel.'
 sidebar_position: 15
@@ -23,10 +23,10 @@ description: Workflow reporting to slack
 name: slack
 components:
   - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/slack:v0.4.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/slack:v0.4.2
 
 ```
 
@@ -61,4 +61,4 @@ You can configure this component with the following options:
 
 | Option Name                  | Description   | Default | Type   |
 |------------------------------|---------------|---------|--------|
-| **[Required]** slack_webhook | Slack webhook |         | String |
+| **\[Required]** slack\_webhook | Slack webhook |         | String |

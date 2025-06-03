@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/snyk.png"
+   icon: "/img/components/snyk.png"
 title: 'Snyk'
 description: 'Scanner component that scans Repositories and Containers with Snyk.'
 sidebar_position: 9
@@ -28,10 +28,10 @@ and [GitHub repo](https://github.com/snyk/snyk-cli).
 description: Snyk based workflow
 name: snyk
 components:
-  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/snyk:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/snyk:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 
 ```
 
@@ -66,4 +66,4 @@ You can configure this component with the following options:
 
 | Option Name               | Description  | Default | Type   |
 |---------------------------|--------------|---------|--------|
-| **[Required]** snyk_token | Snyk API key |         | String |
+| **\[Required]** snyk\_token | Snyk API key |         | String |

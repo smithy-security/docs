@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/trufflehog.svg"
+    icon: "/img/components/trufflehog.svg"
 title: 'Trufflehog'
 description: 'Scanner that runs the open source secrets scanner `trufflehog`.'
 sidebar_position: 2
@@ -25,10 +25,10 @@ and [GitHub repo](https://github.com/trufflesecurity/trufflehog).
 description: Trufflehog based workflow
 name: trufflehog
 components:
-  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.2
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/trufflehog:v1.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/trufflehog:v1.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 
 ```
 

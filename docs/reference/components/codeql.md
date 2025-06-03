@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/codeql.svg"
+    icon: "/img/components/codeql.svg"
 title: 'CodeQL'
 description: 'Scanner that runs Github CodeQL SAST.'
 sidebar_position: 5
@@ -23,10 +23,10 @@ description: Workflow scanning with codeql
 name: codeql
 components:
 - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/codeql:v1.3.0
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.1
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.1
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/codeql:v1.3.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file
