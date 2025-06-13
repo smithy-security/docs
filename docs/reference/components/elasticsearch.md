@@ -63,8 +63,7 @@ in order for the workflow to work.
 2. Configure any workflow that produces vulnerabilities (e.g. sast, sca,
    container scanner etc)
 3. Find the elasticsearch component in the reporters dropdown.
-4. Click on the elasticsearch icon to bring the form to the top
-5. Fill the form on the right
+   4Fill the form on the right
 
 ## Options
 

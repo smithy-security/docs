@@ -61,8 +61,7 @@ jira:
 
 1. In the Smithy UI, open the page to create a new workflow.
 2. Find the Jira component in the Reporters dropdown.
-3. Click on the Jira flow icon to bring the form to the top
-4. Fill the form on the right
+3. Fill the form on the right
 
 ## Options
 

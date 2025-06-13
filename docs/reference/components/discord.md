@@ -52,17 +52,17 @@ discord:
 
 1. In the Smithy UI, open the page to create a new workflow.
 2. Find the Discord component in the Reporters dropdown.
-3. Click on the Discord flow icon to bring the form to the top
-4. Fill the form on the right
+3. Fill the form on the right
 
 ## Options
 
 You can configure this component with the following options:
 
-| Option Name             | Description             | Default | Type   |
-|-------------------------|-------------------------|---------|--------|
-| **\[Required]** channel\_id | The Discord channel id. |     | String |
-| **\[Required]** auth\_token | The Discord auth token. |    | String |
+| Option Name                 | Description             | Default | Type   |
+|-----------------------------|-------------------------|---------|--------|
+| **\[Required]** channel\_id | The Discord channel id. |         | String |
+| **\[Required]** auth\_token | The Discord auth token. |         | String |
 
-Check out guidance [here](https://github.com/smithy-security/smithy/tree/main/components/reporters/discord)
+Check out
+guidance [here](https://github.com/smithy-security/smithy/tree/main/components/reporters/discord)
 to correctly set-up the options.

@@ -63,8 +63,7 @@ sonarqube:
 
 1. In the Smithy UI, open the page to create a new workflow.
 2. Find the SonarQube component in the Scanners dropdown.
-3. Click on the SonarQube flow icon to bring the form to the top
-4. Fill the form on the right
+3. Fill the form on the right
 
 ## Options
 
