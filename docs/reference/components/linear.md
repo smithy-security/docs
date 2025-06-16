@@ -58,17 +58,16 @@ linear:
 
 1. In the Smithy UI, open the page to create a new workflow.
 2. Find the Linear component in the Reporters dropdown.
-3. Click on the Linear flow icon to bring the form to the top
-4. Fill the form on the right
+3. Fill the form on the right
 
 ## Options
 
 You can configure this component with the following options. The options that
 have a default value are optional:
 
-| Option Name             | Description                                                                                                                                                               | Default | Type   |
-|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|--------|
-| **\[Required]** api\_key | The Linear API key                                                                                                                                                        |     | String |
-| **\[Required]** team\_id | The team id (uuid). You can figure this out following the guidance [here](https://github.com/smithy-security/smithy/tree/main/components/reporters/linear/test/get-teams) |    | String |
-| issue\_labels            | The labels to be used on your tickets                                                                                                                                     |         | String |
-| base\_url                | Linear's base url for graphql API                                                                                                                                         | https://api.linear.app/graphql        | String |
+| Option Name              | Description                                                                                                                                                               | Default                        | Type   |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|--------|
+| **\[Required]** api\_key | The Linear API key                                                                                                                                                        |                                | String |
+| **\[Required]** team\_id | The team id (uuid). You can figure this out following the guidance [here](https://github.com/smithy-security/smithy/tree/main/components/reporters/linear/test/get-teams) |                                | String |
+| issue\_labels            | The labels to be used on your tickets                                                                                                                                     |                                | String |
+| base\_url                | Linear's base url for graphql API                                                                                                                                         | https://api.linear.app/graphql | String |
