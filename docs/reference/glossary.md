@@ -90,7 +90,7 @@ but the stages are strictly sequential:
 4. Run all Filter components in parallel
 5. Run all Reporter components in parallel
 
-## Instance
+## Instance (or Run)
 
 A Smithy Instance is just one run of a workflow. For example, if you run your Go
 scanning pipeline twice, you
@@ -100,3 +100,20 @@ the `overrides.yaml` with
 your preferred component parameters. The available parameters for every
 component are in
 the [docs](/docs/category/components).
+
+## SaaS Trigger
+
+Triggers allow you to scale and automate your workflows.
+With them you can run workflows when:
+
+- you push code in **any/all** of your organisation's repositories
+- you push code to a branch in your Git repository
+- you push code to a Git Pull Request (or Merge request)
+- you push a new image or a tag to a container registry
+
+The trigger creates an event, which automatically populates the parameters
+of a target component, and then runs the workflow with that. Some triggers
+get events from third-party systems (Github, Gitlab, Azure), so your
+workflows can run automatically when they fire.
+
+Triggers are only available in the Smithy SaaS.
