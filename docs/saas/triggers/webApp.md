@@ -37,8 +37,8 @@ You can add multiple of these:
 **URL**: The HTTP or HTTPS URL of a web app.  
 **Login URL**: The HTTP or HTTPS URL of the login page.    
 **Username**: Username for the website.  
-**Password
-**: Password for the website. You can use a templated password, with the template format
+**Password**: Password for the website.
+You can use a templated password, with the template format
 `{{ secret "MY_PASSWORD"}}`. Passwords are managed in Settings > Passwords.
 
 Here is what the trigger looks like when you set it up correctly:
