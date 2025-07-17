@@ -39,7 +39,7 @@ You can add multiple of these:
 **Username**: Username for the website.  
 **Password**: Password for the website.
 You can use a templated password, with the template format
-`{{ secret "MY_PASSWORD"}}`. Passwords are managed in Settings > Passwords.
+`{{ secret "MY_PASSWORD"}}`. Passwords are managed in Settings > Secrets.
 
 Here is what the trigger looks like when you set it up correctly:
 
