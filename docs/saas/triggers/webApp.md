@@ -35,7 +35,7 @@ This trigger can only be launched manually.
 
 You can add multiple of these:   
 **URL**: The HTTP or HTTPS URL of a web app.  
-**Login URL**: The HTTP or HTTPS URL of the login page.    
+**Login URL**: The path of the login page.    
 **Username**: Username for the website.  
 **Password**: Password for the website.
 You can use a templated password, with the template format
