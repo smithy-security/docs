@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/zap.svg"
+  icon: "/img/components/zap.svg"
 title: 'ZAP'
 description: 'Scanner that runs the Open Source DAST ZAP.'
 sidebar_position: 2
@@ -56,6 +56,15 @@ zaproxy:
 3. \[Optional] If you want to do an authenticated scan: Set the url where the
    login form is and any credentials.
 4. Set the target domain or base url
+
+Example globas settings if you are using the web app trigger
+
+```
+Login URL: {{ .context.trigger.event.login_path }}
+Target: {{ .context.trigger.event.url }}
+Username: {{ .context.trigger.auth.username }}
+Password: {{ .context.trigger.auth.token }}
+```
 
 ## Options
 
