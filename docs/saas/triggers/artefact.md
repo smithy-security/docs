@@ -36,7 +36,7 @@ Password: {{ .context.trigger.auth.token }}
 
 ## Trigger Settings
 
-When you add the artefact trigger to a workflow, you will get a modal with a form:
+When you add the artefact trigger to a workflow, you will get a popup with a form:
 
 **Artefact URL**: The HTTP or HTTPS URL of the artefact. You can have multiple.
 **Region**: AWS region.    
