@@ -28,6 +28,19 @@ a separate target and will launch a separate run.
 
 This trigger can only be launched manually.
 
+## Global component settings
+
+Go to the /integrations page and find the git-target.
+You need to set it up with the following settings:
+
+```
+Reference:      {{ .context.trigger.event.reference }}
+Username:       {{ .context.trigger.auth.username }}
+Token:          {{ .context.trigger.auth.token }}
+Base reference:	{{ .context.trigger.event.target_branch }}
+Repo URL:       https://{{ .context.trigger.event.host }}/{{ .context.trigger.event.organisation }}/{{ .context.trigger.event.repository }}
+```
+
 ## UI Settings
 
 **Repo URL**: The HTTPS or SSH URL of a git repo. You can add multiple of
