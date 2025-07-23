@@ -35,6 +35,19 @@ run.
 
 ## UI Settings
 
+## Global component settings
+
+Go to the /integrations page and find the git-clone component.
+You need to set it up with the following settings:
+
+```
+Reference:      {{ .context.trigger.event.reference }}
+Username:       {{ .context.trigger.auth.username }}
+Token:          {{ .context.trigger.auth.token }}
+Base reference:	{{ .context.trigger.event.target_branch }}
+Repo URL:	    https://{{ .context.trigger.event.host }}/{{ .context.trigger.event.organisation }}/{{ .context.trigger.event.repository }}
+```
+
 #### Event Type
 
 Setup the events that cause the trigger to run a workflow.

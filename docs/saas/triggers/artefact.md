@@ -28,8 +28,8 @@ Go to the /integrations page and find the source-code-artifact.
 You need to set it up with the following settings:
 
 ```
-URL: {{ {{ .context.trigger.event.url }}  
-Region: {{ .context.trigger.event.region }}  
+URL:      {{ .context.trigger.event.url }}  
+Region:   {{ .context.trigger.event.region }}  
 Username: {{ .context.trigger.auth.username }}  
 Password: {{ .context.trigger.auth.token }}  
 ```

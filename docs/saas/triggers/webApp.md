@@ -31,9 +31,9 @@ You need to set it up with the following settings:
 
 ```
 Login URL: {{ .context.trigger.event.login_path }}  
-Target: {{ .context.trigger.event.url }}  
-Username: {{ .context.trigger.auth.username }}  
-Password: {{ .context.trigger.auth.token }}  
+Target:    {{ .context.trigger.event.url }}  
+Username:  {{ .context.trigger.auth.username }}  
+Password:  {{ .context.trigger.auth.token }}  
 ```
 
 ## UI Settings

@@ -34,11 +34,11 @@ Go to the /integrations page and find the git-target.
 You need to set it up with the following settings:
 
 ```
-reference:	{{ .context.trigger.event.reference }}
-username:	{{ .context.trigger.auth.username }}
-token:	{{ .context.trigger.auth.token }}
-base reference:	{{ .context.trigger.event.target_branch }}
-repo url:	https://{{ .context.trigger.event.host }}/{{ .context.trigger.event.organisation }}/{{ .context.trigger.event.repository }}
+Reference:      {{ .context.trigger.event.reference }}
+Username:       {{ .context.trigger.auth.username }}
+Token:          {{ .context.trigger.auth.token }}
+Base reference:	{{ .context.trigger.event.target_branch }}
+Repo URL:       https://{{ .context.trigger.event.host }}/{{ .context.trigger.event.organisation }}/{{ .context.trigger.event.repository }}
 ```
 
 ## UI Settings
