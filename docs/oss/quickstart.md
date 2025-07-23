@@ -31,3 +31,4 @@ smithyctl workflow run \
 ```
 
 You should see the workflow results in your shell.
+To run a custom workflow, check out the [next tutorial](/docs/oss/writing-workflows).
