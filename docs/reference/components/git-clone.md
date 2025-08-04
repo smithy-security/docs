@@ -23,11 +23,11 @@ For example:
 description: Workflow scanning with gosec
 name: gosec
 components:
-- component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
 
 2. Configure the run parameters of the component in the overrides file
@@ -35,12 +35,12 @@ components:
 ```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
-- name: "repo_url"
-  type: "string"
-  value: "https://github.com/0c34/govwa.git"
-- name: "reference"
-  type: "string"
-  value: "master"
+  - name: "repo_url"
+    type: "string"
+    value: "https://github.com/0c34/govwa.git"
+  - name: "reference"
+    type: "string"
+    value: "master"
 ```
 
 ### SaaS
@@ -57,14 +57,14 @@ All other settings are optional.
 **Github:**
 If you want to clone a private repository you have two choices:
 
-* install the Smithy github application in your repository or organization, then
-  git-clone receives tokens automatically.
-* Create a private github token and set it for every repository as shown below
-  `https://<pat>@github.com/<your account or organization>/<repo>.git`
-  You can generate a PAT token on GitHub via your account settings. Read the
-  precise
-  instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
-  **This is insecure as github tokens are longer lived than necessary**
+1. install the Smithy github application in your repository or organization, then
+   git-clone receives tokens automatically. Use the Github trigger in the Smithy UI.
+2. Create a private github token and set it for every repository as shown below
+   `https://<pat>@github.com/<your account or organization>/<repo>.git`
+   You can generate a PAT token on GitHub via your account settings. Read the
+   precise
+   instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). Use the Advanced Git trigger in the Smithy UI.
+   **This is insecure as github tokens are longer lived than necessary**
 
 **Gitlab:**
 If you want to clone a private repository from Gitlab, currently you can only do
