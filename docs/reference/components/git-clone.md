@@ -57,14 +57,17 @@ All other settings are optional.
 **Github:**
 If you want to clone a private repository you have two choices:
 
-1. install the Smithy github application in your repository or organization, then
+1. Install the Smithy github application in your repository or organization, then
    git-clone receives tokens automatically. Use the Github trigger in the Smithy UI.
-2. Create a private github token and set it for every repository as shown below
+2. Create a private github token and give it permissions to read repositories.
+3. In the Smithy Open-Source you can set the repo URL as:
    `https://<pat>@github.com/<your account or organization>/<repo>.git`
    You can generate a PAT token on GitHub via your account settings. Read the
-   precise
-   instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). Use the Advanced Git trigger in the Smithy UI.
-   **This is insecure as github tokens are longer lived than necessary**
+   precise instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).  
+   **This is insecure as github tokens are longer lived than necessary.**  
+   **Make sure you set the token to be as short-lived as possible.**
+4. Use the Advanced Git trigger in the Smithy UI, with the repo URL,
+   your username and your PAT token.
 
 **Gitlab:**
 If you want to clone a private repository from Gitlab, currently you can only do
