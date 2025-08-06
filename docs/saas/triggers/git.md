@@ -41,18 +41,23 @@ Base reference:	{{ .context.trigger.event.target_branch }}
 Repo URL:       https://{{ .context.trigger.event.host }}/{{ .context.trigger.event.organisation }}/{{ .context.trigger.event.repository }}
 ```
 
+## Getting a GIT PAT token
+
+To get a token in GitHub:  
+Go to account > Settings > Developer settings > Personal Access tokens > Tokens (classic).  
+Create a new token that has
+`repo` scope. Make sure you set the shortest expiration possible.  
+Copy the token and paste it into a new secret in the Smithy UI (Settings > Secrets). You can name it something like
+`MY_GITHUB_TOKEN`.  
+When you create a new Advanced Git target, use your token with
+`{{ secret "MY_GITHUB_TOKEN"}}`.
+
 ## UI Settings
 
 **Repo URL**: The HTTPS or SSH URL of a git repo. You can add multiple of
 these.  
 **Username**: Username on the host Git system, e.g. a github username.  
-**Token**: SSH token. This is the same as the token for cloning a repo
-locally. You can create one by following the
-instructions [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
-
-Here is what the trigger looks like when you set it up correctly:
-
-![Git trigger settings screenshot](/img/instructions/git-trigger-settings.png)
+**Token**: Classic PAT token from Github.
 
 ## Running the workflow
 
