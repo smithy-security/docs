@@ -31,7 +31,7 @@ This will run Credo against your Elixir codebase as part of the workflow.
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Add a git-clone target and configure it to point to a repository with the source code for your Elixir application.
+2. Add an advanced git or github target and configure it to point to a repository with the source code for your Elixir application.
 3. Find Credo in the Scanners dropdown. Click to add it to the workflow.
 4. Run the workflow as normal.
 5. The results will be available in the Smithy UI, where you can review the findings and take action as needed.
