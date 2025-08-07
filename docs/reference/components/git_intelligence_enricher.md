@@ -21,9 +21,14 @@ Currently, the Enricher relies on V1 of the Git-Intelligence library. This V1 is
 <details>
   <summary>💡 The `git diff`</summary>
 
-  The Git diff is a file that gets created when comparing two different states of a repository. It gives information about the changes between two different states of the Git repository.
+  `git diff` shows line-by-line changes between any two commits, branches, or your working tree. In this guide, `git diff` (or `diff`) refers to that output, which we save as a text file for later analysis.
 
-  It can be created by running `git diff commit_hashA..commit_hashB`. The commit hashes can be stated explicitly or implicitly (e.g., by putting the names of branches you want to compare, for which Git then uses the `HEAD` of each).
+  To compare two commits (or other revision references), run:
+
+  ```bash
+  git diff <commitA>..<commitB>
+  ```
+  Replace `<commitA>` and `<commitB>` with commit hashes, branch names, or tags. Git resolves implicit references, like branches or tags to the appropriate HEAD.
 </details>
 
 ## What the enricher can and can't do:
