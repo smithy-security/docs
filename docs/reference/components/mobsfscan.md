@@ -44,7 +44,7 @@ git-clone:
 ### SaaS
 
 1. In the Smithy UI, open the page to create a new workflow.
-2. Add a git-clone target and configure it to point to a repository with the
+2. Add a an advanced git or github target and configure it to point to a repository with the
    source code for a mobile application.
 3. Find MobSF in the Scanners dropdown. Click to add it to the workflow.
 4. Run the workflow as normal.
