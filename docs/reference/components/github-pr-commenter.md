@@ -8,7 +8,8 @@ sidebar_position: 15
 
 # GitHub PR Commenter
 
-This is a SaaS-only reporter component that automatically comments on GitHub Pull Requests with security findings detected by any scanner running in Smithy. It only reports findings that are present in the lines changed by the PR, helping reviewers focus on actionable issues introduced or modified in the pull request.
+This is a SaaS-only reporter component that automatically comments on GitHub Pull Requests with security findings detected by any scanner running in Smithy.
+It only reports findings that are present in the PR diff (the lines changed in the PR), helping reviewers focus on actionable issues introduced or modified in the pull request.
 
 ## How to use
 
