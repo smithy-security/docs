@@ -8,56 +8,9 @@ sidebar_position: 17
 
 # SonarQube
 
-SonarQube scanner that uses SonarQube Cloud Edition to generate findings.
+SonarQube scanner that uses SonarQube Cloud Edition to generate findings. This is a SaaS-Only component
 
 ## How to use
-
-### Open-Source
-
-1. Add the component to the workflow:
-
-```yaml
-# file ./my-workflow/workflow.yml
-description: Sonarqube based workflow
-name: sonarqube
-components:
-  - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.4.0
-  - component: file://components/scanners/sonarqube/component.yaml
-  - component: ghcr.io/smithy-security/private-components/manifests/components/enrichers/exploit-exists:v0.0.3
-  - component: hcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
-```
-
-2. Configure the run parameters of the component in the overrides file:
-
-```yaml
-# file: ./my-workflow/overrides.yaml
-git-clone:
-  - name: "repo_url"
-    type: "string"
-    value: "https://github.com/sqreen/go-dvwa.git"
-  - name: "reference"
-    type: "string"
-    value: "master"
-sonarqube:
-  - name: "auth_token"
-    type: "string"
-    value: "xxx"
-  - name: "project_key"
-    type: "string"
-    value: "xxx"
-  - name: "project_name"
-    type: "string"
-    value: "xxx"
-  - name: "organization"
-    type: "string"
-    value: "xxx"
-  - name: "target_repository_url"
-    type: "string"
-    value: "https://github.com/sqreen/go-dvwa.git"
-  - name: "target_repository_reference"
-    type: "string"
-    value: "master"
-```
 
 ### SaaS
 
