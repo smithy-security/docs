@@ -46,7 +46,7 @@ gs://my-bucket/my-archive.tar.gz
 description: Downloads and unpacks a repository and runs go scanners on it
 name: source-code-artifact
 components:
-  - component: file://components/targets/source-code-artifact/component.yaml
+  - component:  ghcr.io/smithy-security/smithy/manifests/components/targets/source-code-artifact:v0.1.0
   - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.4.0
   - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.2.0
   - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.1.0
