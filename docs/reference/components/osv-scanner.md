@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/osv.png"
+  icon: "/img/components/osv-scanner.svg"
 title: 'OSV Scanner'
 description: 'Scanner that runs the OSV Scanner on your dependencies.'
 sidebar_position: 5
