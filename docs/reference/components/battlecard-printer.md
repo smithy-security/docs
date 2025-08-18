@@ -8,8 +8,10 @@ sidebar_position: 3
 
 # Battlecard Printer
 
-The **battlecard-printer
-** is a Smithy reporter component that logs a summary of vulnerability findings in a concise "battlecard" format. It is designed to help teams quickly understand the results of security scans, highlighting key metrics such as total findings, enrichments, and findings by tool.
+The **battlecard-printer** is a Smithy reporter component that logs a summary
+of vulnerability findings in a concise "battlecard" format.
+It is designed to help teams quickly understand the results of security scans,
+highlighting key metrics such as total findings, enrichments, and findings by tool.
 
 ## How to use with Smithy
 
