@@ -1,6 +1,7 @@
 {
     "label": "Triggers",
     "position": 5,
+    "description": "Learn how to run workflows automatically at scale.",
     "link": {
         "type": "generated-index",
         "description": "Learn how to run workflows automatically at scale."
