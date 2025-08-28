@@ -1,0 +1,9 @@
+{
+    "label": "Data architecture",
+    "position": 5,
+    "description": "Learn how Smithy stores cybersecurity results.",
+    "link": {
+        "type": "generated-index",
+        "description": "Learn how Smithy stores cybersecurity results."
+    }
+}
