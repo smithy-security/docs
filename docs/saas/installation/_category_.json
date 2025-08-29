@@ -1,0 +1,9 @@
+{
+    "label": "Installation",
+    "position": 5,
+    "description": "What you need for running Smithy in your organisation.",
+    "link": {
+        "type": "generated-index",
+        "description": "What you need for running Smithy in your organisation."
+    }
+}
