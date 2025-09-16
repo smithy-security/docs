@@ -9,8 +9,7 @@ description: 'Target component that downloads and extracts archived source code 
 
 Target component that downloads and extracts archived source code from various sources including HTTP endpoints and S3-compatible storage.
 
-The component supports `.zip`, `.tar`, and
-`.tar.gz` archive formats from multiple protocols and automatically extracts the contents for analysis by downstream components.
+The component supports `.zip`, `.tar`, `.tar.gz`, `.apk` and `.ipa` archive formats from multiple protocols and automatically extracts the contents for analysis by downstream components.
 
 ## Supported Sources
 
@@ -34,6 +33,8 @@ gs://my-bucket/my-archive.tar.gz
 * **ZIP**: `.zip` files
 * **TAR**: `.tar` files
 * **TAR.GZ**: `.tar.gz` and `.tgz` files
+* **APK**: `.apk` files
+*  🍺 **IPA**: `.ipa` files
 
 ## How to use
 
@@ -46,7 +47,7 @@ gs://my-bucket/my-archive.tar.gz
 description: Downloads and unpacks a repository and runs go scanners on it
 name: source-code-artifact
 components:
-  - component:  ghcr.io/smithy-security/smithy/manifests/components/targets/source-code-artifact:v0.1.0
+  - component: ghcr.io/smithy-security/smithy/manifests/components/targets/source-code-artifact:v0.1.0
   - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.4.0
   - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.2.0
   - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.1.0
