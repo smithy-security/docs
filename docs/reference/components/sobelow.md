@@ -1,13 +1,13 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/sobelow.png"
+  icon: "/img/components/sobelow.svg"
 title: 'Sobelow'
 description: 'Elixir security analysis with Sobelow.'
 ---
 
 # Sobelow
 
-This scanner component runs [Sobelow](https://github.com/nccgroup/sobelow), a security-focused static analysis tool for Elixir/Phoenix applications. Sobelow helps developers identify and remediate common security issues in their Elixir codebases, such as SQL injection, XSS, and insecure configuration.
+This scanner component runs [Sobelow](https://github.com/sobelow/sobelow), a security-focused static analysis tool for Elixir/Phoenix applications. Sobelow helps developers identify and remediate common security issues in their Elixir codebases, such as SQL injection, XSS, and insecure configuration.
 
 ## How to use with Smithy
 
