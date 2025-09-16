@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/defectdojo.svg"
 title: 'Defect Dojo'
 description: 'Reporter that pushes findings to a DefectDojo instance.'
-sidebar_position: 18
 ---
 
 # Defect Dojo

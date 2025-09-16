@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/mobsf.svg"
+  icon: "/img/components/mobsf.svg"
 title: 'MobSF Scan'
 description: 'SAST Scanner for mobile applications.'
-sideba\_position: 5
 ---
 
 # MobSF Scan

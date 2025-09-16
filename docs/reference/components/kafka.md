@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/kafka.svg"
 title: 'Kafka'
 description: 'Kafka reporter that publishes OCSF findings in protobuf format to a configured Kafka topic or uploads them to S3 and notifies via Kafka.'
-sidebar_position: 18
 ---
 
 # Kafka
@@ -17,11 +16,13 @@ The component supports both secure and insecure Kafka connections, with options 
 The component supports two distinct reporting modes:
 
 **kafka mode:**
+
 - Reports each individual finding as a separate Kafka message
 - Provides real-time streaming of findings as they are discovered
 - Suitable for scenarios requiring immediate processing of individual findings
 
 **s3-kafka mode (default):**
+
 - Uploads all findings as a single blob to S3
 - Sends one Kafka message containing metadata about the uploaded blob
 - Reduces Kafka message volume and provides efficient batch processing
@@ -79,12 +80,14 @@ kafka:
 The component supports two mutually exclusive connection methods:
 
 **Direct Broker Addresses:**
+
 ```yaml
 kafka_addresses: "broker1:9092,broker2:9092,broker3:9092"
 kafka_broker_srv_record: ""  # Must be empty
 ```
 
 **SRV Record Discovery:**
+
 ```yaml
 kafka_broker_srv_record: "_kafka._tcp.example.com"
 kafka_addresses: ""  # Must be empty
@@ -101,29 +104,30 @@ kafka_tls_ca_file_path: "/path/to/ca-cert.pem"
 kafka_tls_client_key_file_path: "/path/to/client-key.pem"
 ```
 
-**Note:** The application expects certificate files to be present on the filesystem and accessible at the specified paths.
+**Note:
+** The application expects certificate files to be present on the filesystem and accessible at the specified paths.
 
 ## Options
 
 You can configure this component with the following options. The options that have a default value are optional:
 
-| Option Name                        | Description                                                                                                               | Default                       | Type   |
-|------------------------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------|--------|
-| **[Required]** kafka_topic         | Topic where messages are published                                                                                        |                               | String |
-| kafka_addresses                    | Comma-separated broker addresses (mutually exclusive with SRV record)                                                    |                               | String |
-| kafka_broker_srv_record            | SRV record for broker discovery (mutually exclusive with addresses)                                                      |                               | String |
-| kafka_version                      | Kafka protocol version (e.g., "2.8.0"). If empty, client negotiates with broker                                         |                               | String |
-| kafka_client_id                    | Producer client identifier for broker logs                                                                               | smithy-kafka-reporter         | String |
-| kafka_producer_message_key_id      | Custom message key ID. If empty, instance_id is used in s3-kafka flow and finding_id is used in kafka flow              |                               | String |
-| kafka_tls_enabled                  | Enable TLS encryption                                                                                                     | false                         | String |
-| kafka_tls_client_cert_file_path    | Path to client certificate file (required if TLS enabled)                                                                | /etc/ssl/certs/app/client.crt | String |
-| kafka_tls_ca_file_path             | Path to CA certificate file (required if TLS enabled)                                                                    | /etc/ssl/certs/app/ca.crt     | String |
-| kafka_tls_client_key_file_path     | Path to private key file (required if TLS enabled)                                                                       | /etc/ssl/certs/app/client.key | String |
-| kafka_send_max_retries             | Maximum send retries (0 uses Kafka defaults)                                                                             | 0                             | String |
-| reporter_type                      | Reporting mode: "kafka" or "s3-kafka"                                                                                    | s3-kafka                      | String |
-| artifact_registry_url              | S3 endpoint URL (required for s3-kafka mode)                                                                             |                               | String |
-| artifact_registry_access_secret    | S3 access secret (required for s3-kafka mode)                                                                            |                               | String |
-| artifact_registry_access_key_id    | S3 access key ID (required for s3-kafka mode)                                                                            |                               | String |
+| Option Name                     | Description                                                                                                | Default                       | Type   |
+|---------------------------------|------------------------------------------------------------------------------------------------------------|-------------------------------|--------|
+| **[Required]** kafka_topic      | Topic where messages are published                                                                         |                               | String |
+| kafka_addresses                 | Comma-separated broker addresses (mutually exclusive with SRV record)                                      |                               | String |
+| kafka_broker_srv_record         | SRV record for broker discovery (mutually exclusive with addresses)                                        |                               | String |
+| kafka_version                   | Kafka protocol version (e.g., "2.8.0"). If empty, client negotiates with broker                            |                               | String |
+| kafka_client_id                 | Producer client identifier for broker logs                                                                 | smithy-kafka-reporter         | String |
+| kafka_producer_message_key_id   | Custom message key ID. If empty, instance_id is used in s3-kafka flow and finding_id is used in kafka flow |                               | String |
+| kafka_tls_enabled               | Enable TLS encryption                                                                                      | false                         | String |
+| kafka_tls_client_cert_file_path | Path to client certificate file (required if TLS enabled)                                                  | /etc/ssl/certs/app/client.crt | String |
+| kafka_tls_ca_file_path          | Path to CA certificate file (required if TLS enabled)                                                      | /etc/ssl/certs/app/ca.crt     | String |
+| kafka_tls_client_key_file_path  | Path to private key file (required if TLS enabled)                                                         | /etc/ssl/certs/app/client.key | String |
+| kafka_send_max_retries          | Maximum send retries (0 uses Kafka defaults)                                                               | 0                             | String |
+| reporter_type                   | Reporting mode: "kafka" or "s3-kafka"                                                                      | s3-kafka                      | String |
+| artifact_registry_url           | S3 endpoint URL (required for s3-kafka mode)                                                               |                               | String |
+| artifact_registry_access_secret | S3 access secret (required for s3-kafka mode)                                                              |                               | String |
+| artifact_registry_access_key_id | S3 access key ID (required for s3-kafka mode)                                                              |                               | String |
 
 ## Data Format
 
@@ -135,19 +139,20 @@ You can find the OCSF schema [here](https://github.com/smithy-security/smithy/tr
 
 ```go
 import (
-    ocsf "github.com/smithy-security/smithy/sdk/gen/ocsf_schema/v1"
-    "google.golang.org/protobuf/proto"
+ocsf "github.com/smithy-security/smithy/sdk/gen/ocsf_schema/v1"
+"google.golang.org/protobuf/proto"
 )
 
 var finding ocsf.VulnerabilityFinding
 if err := proto.Unmarshal(rawMessageValueBytes, &finding); err != nil {
-    // handle error
+// handle error
 }
 ```
 
 ### S3-Kafka Mode
 
 In s3-kafka mode, the component:
+
 1. Uploads all findings as a tar archive of protobuf blobs to the configured S3 location
 2. Sends one Kafka message containing metadata about the uploaded blob
 
@@ -157,13 +162,13 @@ You can deserialise the information in each message with the following snippet:
 
 ```go
 import (
-    v1 "github.com/smithy-security/private-components/reporters/kafka/proto/gen/v1"
-    "google.golang.org/protobuf/proto"
+v1 "github.com/smithy-security/private-components/reporters/kafka/proto/gen/v1"
+"google.golang.org/protobuf/proto"
 )
 
 var event v1.InstanceCompletedEvent
 if err := proto.Unmarshal(rawMessageValueBytes, &event); err != nil {
-    // handle error
+// handle error
 }
 ```
 
@@ -171,10 +176,10 @@ if err := proto.Unmarshal(rawMessageValueBytes, &event); err != nil {
 
 The following Kafka headers are populated:
 
-| Key           | Populated when               | Description                                                                                                                 |
-|---------------|------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Key           | Populated when                | Description                                                                                                                 |
+|---------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `instance_id` | mode is `kafka` or `s3-kafka` | Smithy's instance id for each run. This is a UUID and will be the same for all findings published in the same reporter run. |
-| `finding_id`  | mode is `kafka`              | Incrementing integer that uniquely identifies each finding (kafka mode only).                                              |
+| `finding_id`  | mode is `kafka`               | Incrementing integer that uniquely identifies each finding (kafka mode only).                                               |
 
 ## Producer Configuration
 
@@ -190,16 +195,19 @@ These settings prioritize data consistency and delivery guarantees over throughp
 ## Troubleshooting
 
 **Connection Issues:**
+
 - Verify broker addresses are correct and accessible
 - Check that the specified Kafka topic exists
 - Ensure firewall rules allow connections on the specified ports
 
 **TLS Issues:**
+
 - Verify certificate files exist at the specified paths
 - Ensure certificate files are readable by the application
 - Check that certificates are not expired
 
 **S3-Kafka Mode Issues:**
+
 - Verify S3 credentials and permissions
 - Check that the S3 bucket exists and is accessible
 - Ensure proper IAM permissions for S3 operations

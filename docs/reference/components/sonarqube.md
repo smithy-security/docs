@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-    icon: "/img/components/sonarqube.svg"
+  icon: "/img/components/sonarqube.svg"
 title: 'SonarQube'
 description: 'SonarQube scanner that uses SonarQube Cloud Edition to generate findings'
-sidebar_position: 17
 ---
 
 # SonarQube

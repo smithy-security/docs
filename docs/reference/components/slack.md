@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/slack.svg"
+  icon: "/img/components/slack.svg"
 title: 'Slack'
 description: 'Reporter that pushes findings to a Slack channel.'
-sidebar_position: 15
 ---
 
 # Slack
@@ -59,6 +58,6 @@ slack:
 
 You can configure this component with the following options:
 
-| Option Name                  | Description   | Default | Type   |
-|------------------------------|---------------|---------|--------|
+| Option Name                    | Description   | Default | Type   |
+|--------------------------------|---------------|---------|--------|
 | **\[Required]** slack\_webhook | Slack webhook |         | String |

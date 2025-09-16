@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/nancy.svg"
 title: 'Nancy'
 description: 'Dependency Scanner for Go.'
-sidebar_position: 5
 ---
 
 # Nancy

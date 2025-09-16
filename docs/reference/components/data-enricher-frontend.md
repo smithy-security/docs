@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/smithy.svg"
 title: "Data Enricher"
 description: "Enricher component that adds details and deduplicates issues."
-sidebar_position: 16
 ---
 
 # Data Enricher - deduplication

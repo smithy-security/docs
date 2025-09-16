@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/elasticsearch.svg"
+  icon: "/img/components/elasticsearch.svg"
 title: 'ElasticSearch'
 description: 'Reporter that pushes findings to an ElasticSearch instance.'
-sidebar_position: 14
 ---
 
 # ElasticSearch
@@ -22,11 +21,11 @@ about ElasticSearch [here](https://kagi.com/search?q=elasticsearch).
 description: Workflow reporting to elasticsearch
 name: elasticsearch
 components:
-- component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
-- component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
-- component: ghcr.io/smithy-security/smithy/manifests/components/reporters/elasticsearch:v1.0.1
+  - component: ghcr.io/smithy-security/smithy/manifests/components/targets/git-clone:v1.3.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/gosec:v1.2.3
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/nancy:v1.2.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/elasticsearch:v1.0.1
 
 ```
 
@@ -36,22 +35,22 @@ components:
 ```yaml
 # file: ./my-workflow/overrides.yaml
 git-clone:
-- name: "repo_url"
-  type: "string"
-  value: "https://github.com/sqreen/go-dvwa"
-- name: "reference"
-  type: "string"
-  value: "master"
+  - name: "repo_url"
+    type: "string"
+    value: "https://github.com/sqreen/go-dvwa"
+  - name: "reference"
+    type: "string"
+    value: "master"
 elasticsearch:
-- name: "elasticsearch_url"
-  type: "string"
-  value: "Your ES URL here"
-- name: "elasticsearch_index"
-  type: "string"
-  value: "Any Index"
-- name: "elasticsearch_api_key"
-  type: "string"
-  value: "An API Key with the rights to read cluster and write indexes"
+  - name: "elasticsearch_url"
+    type: "string"
+    value: "Your ES URL here"
+  - name: "elasticsearch_index"
+    type: "string"
+    value: "Any Index"
+  - name: "elasticsearch_api_key"
+    type: "string"
+    value: "An API Key with the rights to read cluster and write indexes"
 ```
 
 *Warning*: You need to configure secrets and other parameters for elasticsearch

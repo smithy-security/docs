@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/smithy.svg"
+  icon: "/img/components/smithy.svg"
 title: 'Reachability'
 description: 'Enricher component that adds a `reachable` annotation to every finding.'
-sidebar_position: 16
 ---
 
 # Reachability

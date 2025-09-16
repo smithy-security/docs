@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/battlecard-printer.svg"
 title: 'Battlecard Printer'
 description: 'A reporter that prints a summary of items found during the scan'
-sidebar_position: 3
 ---
 
 # Battlecard Printer

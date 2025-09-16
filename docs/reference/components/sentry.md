@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/sentry.svg"
 title: 'Sentry'
 description: 'Sentry reporter that pushes findings to Sentry.'
-sidebar_position: 18
 ---
 
 # Sentry

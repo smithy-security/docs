@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/git-clone.svg"
 title: 'Git Clone'
 description: 'Source component that shallow clones a repository for scanning'
-sidebar_position: 1
 ---
 
 # Git Clone

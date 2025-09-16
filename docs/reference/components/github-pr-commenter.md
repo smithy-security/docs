@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/github.svg"
 title: 'GitHub PR Commenter'
 description: 'Reporter that comments on GitHub PRs with findings in changed lines.'
-sidebar_position: 15
 ---
 
 # GitHub PR Commenter

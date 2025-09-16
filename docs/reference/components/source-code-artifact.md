@@ -3,14 +3,14 @@ sidebar_custom_props:
   icon: "/img/components/source-code-artifact.svg"
 title: 'Source Code Artifact'
 description: 'Target component that downloads and extracts archived source code from various sources.'
-sidebar_position: 5
 ---
 
 # Source Code Artifact
 
 Target component that downloads and extracts archived source code from various sources including HTTP endpoints and S3-compatible storage.
 
-The component supports `.zip`, `.tar`, and `.tar.gz` archive formats from multiple protocols and automatically extracts the contents for analysis by downstream components.
+The component supports `.zip`, `.tar`, and
+`.tar.gz` archive formats from multiple protocols and automatically extracts the contents for analysis by downstream components.
 
 ## Supported Sources
 
@@ -84,19 +84,21 @@ source-code-artifact:
 
 You can configure this component with the following options:
 
-| Option Name                            | Description                                      | Default | Type   |
-|----------------------------------------|--------------------------------------------------|---------|--------|
-| **[Required]** artifact_url           | URL to the archive file                          |         | String |
-| **[Required]** artifact_reference     | Branch, tag, or reference identifier            |         | String |
-| artifact_extension                     | Extension of the artifact                        |         | String |
-| artifact_registry_region               | AWS region for S3-compatible endpoints          |         | String |
-| auth_id                               | Auth ID for authentication                       |         | String |
-| auth_secret                           | Secret for authentication                        |         | String |
+| Option Name                       | Description                            | Default | Type   |
+|-----------------------------------|----------------------------------------|---------|--------|
+| **[Required]** artifact_url       | URL to the archive file                |         | String |
+| **[Required]** artifact_reference | Branch, tag, or reference identifier   |         | String |
+| artifact_extension                | Extension of the artifact              |         | String |
+| artifact_registry_region          | AWS region for S3-compatible endpoints |         | String |
+| auth_id                           | Auth ID for authentication             |         | String |
+| auth_secret                       | Secret for authentication              |         | String |
 
 **Note:**
 
-* For S3-compatible endpoints, `auth_id` and `auth_secret` are used as Access Key ID and Access Key secret.
-* For HTTP endpoints, `auth_id` and `auth_secret` are used as username and password for basic authentication.
+* For S3-compatible endpoints, `auth_id` and
+  `auth_secret` are used as Access Key ID and Access Key secret.
+* For HTTP endpoints, `auth_id` and
+  `auth_secret` are used as username and password for basic authentication.
 
 Check out
 guidance [here](https://github.com/smithy-security/smithy/tree/main/components/targets/source-code-artifact)
