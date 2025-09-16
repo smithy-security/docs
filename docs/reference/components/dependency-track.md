@@ -23,7 +23,7 @@ This component is only available in the Smithy SaaS
 2. Configure any workflow that produces vulnerabilities (e.g. sast, sca,
    container scanner etc)
 3. Find the Dependency Track component in the reporters dropdown.
-   4Fill the form on the right
+4. Fill the form on the right
 
 ## Options
 
