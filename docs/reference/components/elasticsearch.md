@@ -8,7 +8,7 @@ description: 'Reporter that pushes findings to an ElasticSearch instance.'
 # ElasticSearch
 
 Reporter component that pushes findings to an ElasticSearch instance. Read more
-about ElasticSearch [here](https://kagi.com/search?q=elasticsearch).
+about ElasticSearch [here](https://www.elastic.co/elasticsearch).
 
 ## How to use
 
