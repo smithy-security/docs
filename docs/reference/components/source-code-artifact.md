@@ -34,7 +34,7 @@ gs://my-bucket/my-archive.tar.gz
 * **TAR**: `.tar` files
 * **TAR.GZ**: `.tar.gz` and `.tgz` files
 * **APK**: `.apk` files
-* **IPA**: `.ipa` files
+*  🍺 **IPA**: `.ipa` files
 
 ## How to use
 
