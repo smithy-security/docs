@@ -18,7 +18,7 @@ MobSF Scan.
 
 ```yaml
 # file: ./my-workflow/workflow.yaml
-description: Nancy based workflow
+description: mobsfscan workflow
 name: mobsfscan
 components:
   - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
