@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/github.svg"
 title: 'Git Intelligence Enricher'
 description: 'Enricher component adds Git Intelligence Enrichments to findings, so they can be better deduplicated.'
-sidebar_position: 19
 ---
 
 # Git Intelligence Enricher

@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/image-get.svg"
+  icon: "/img/components/image-get.svg"
 title: 'Image Get'
 description: 'Source component that downloads a remote (OCI) container image for scanning'
-sidebar_position: 1
 ---
 
 # Image Get

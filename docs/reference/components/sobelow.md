@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/sobelow.png"
 title: 'Sobelow'
 description: 'Elixir security analysis with Sobelow.'
-sidebar_position: 7
 ---
 
 # Sobelow

@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-    icon: "/img/components/jira.svg"
+  icon: "/img/components/jira.svg"
 title: 'Jira'
 description: 'Jira reporter that opens formatted issues for every non-filtered finding.'
-sidebar_position: 17
 ---
 
 # Jira

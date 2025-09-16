@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/snyk.png"
+  icon: "/img/components/snyk.png"
 title: 'Snyk'
 description: 'Scanner component that scans Repositories and Containers with Snyk.'
-sidebar_position: 9
 ---
 
 # Snyk
@@ -64,6 +63,6 @@ snyk:
 
 You can configure this component with the following options:
 
-| Option Name               | Description  | Default | Type   |
-|---------------------------|--------------|---------|--------|
+| Option Name                 | Description  | Default | Type   |
+|-----------------------------|--------------|---------|--------|
 | **\[Required]** snyk\_token | Snyk API key |         | String |

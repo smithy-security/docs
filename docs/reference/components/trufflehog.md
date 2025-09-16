@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-    icon: "/img/components/trufflehog.svg"
+  icon: "/img/components/trufflehog.svg"
 title: 'Trufflehog'
 description: 'Scanner that runs the open source secrets scanner `trufflehog`.'
-sidebar_position: 2
 ---
 
 # Trufflehog

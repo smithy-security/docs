@@ -1,14 +1,14 @@
 ---
 sidebar_custom_props:
-  icon: "/img/components/mobsf.svg"
-title: 'MobSF Scan'
-description: 'SAST Scanner for mobile applications.'
+  icon: "/img/components/kics.svg"
+title: 'Kics'
+description: 'Scanner for Infrastructure as code.'
 ---
 
-# MobSF Scan
+# Kics
 
-This scanner component runs the popular open source SAST for mobile applications
-MobSF Scan.
+This component runs [Kics](https://kics.io/index.html) by CheckMarx to scan
+infrastructure as code.
 
 ## How to use with Smithy
 
@@ -18,11 +18,11 @@ MobSF Scan.
 
 ```yaml
 # file: ./my-workflow/workflow.yaml
-description: Nancy based workflow
-name: mobsfscan
+description: Kics workflow
+name: kics
 components:
   - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
-  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/mobsfscan:v1.1.2
+  - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/kics:v1.1.2
   - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
   - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
 ```
@@ -44,8 +44,8 @@ git-clone:
 
 1. In the Smithy UI, open the page to create a new workflow.
 2. Add a an advanced git or github target and configure it to point to a repository with the
-   source code for a mobile application.
-3. Find MobSF in the Scanners dropdown. Click to add it to the workflow.
+   source code for a golang application.
+3. Find Kics in the Scanners dropdown. Click to add it to the workflow.
 4. Run the workflow as normal.
 
 ## Options

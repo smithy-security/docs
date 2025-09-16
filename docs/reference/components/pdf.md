@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-    icon: "/img/components/pdf.svg"
+  icon: "/img/components/pdf.svg"
 title: 'PDF document'
 description: 'Reporter that prints findings into a templated PDF document.'
-sidebar_position: 17
 ---
 
 # PDF document
@@ -66,9 +65,9 @@ pdf:
 You can configure this component with the following options. The options that
 have a default value are optional:
 
-| Option Name                          | Description           | Default | Type   |
-|--------------------------------------|-----------------------|---------|--------|
+| Option Name                              | Description           | Default | Type   |
+|------------------------------------------|-----------------------|---------|--------|
 | **\[Required]** aws\_access\_key\_id     | Your S3 access key ID |         | String |
 | **\[Required]** aws\_secret\_access\_key | Your S3 access key    |         | String |
-| **\[Required]** bucket\_name           | Your S3 bucket name   |         | String |
-| **\[Required]** bucket\_region         | Your S3 bucket region |         | String |
+| **\[Required]** bucket\_name             | Your S3 bucket name   |         | String |
+| **\[Required]** bucket\_region           | Your S3 bucket region |         | String |

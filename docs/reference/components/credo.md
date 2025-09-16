@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/credo.svg"
 title: 'Credo'
 description: 'Elixir static code analysis with Credo.'
-sidebar_position: 3
 ---
 
 # Credo

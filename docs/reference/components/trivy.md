@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/trivy.svg"
+  icon: "/img/components/trivy.svg"
 title: 'Trivy'
 description: "Scanner that runs Aquasec's Trivy against a container image."
-sidebar_position: 6
 ---
 
 # Trivy

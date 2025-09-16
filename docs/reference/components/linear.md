@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-    icon: "/img/components/linear.svg"
+  icon: "/img/components/linear.svg"
 title: 'Linear'
 description: 'Linear reporter that opens issues on Linear based on the given findings.'
-sidebar_position: 17
 ---
 
 # Linear

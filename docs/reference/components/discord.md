@@ -1,9 +1,8 @@
 ---
 sidebar_custom_props:
-    icon: "/img/components/discord.svg"
+  icon: "/img/components/discord.svg"
 title: 'Discord'
 description: 'Discord reporter that sends messages to Discord.'
-sidebar_position: 17
 ---
 
 # Discord

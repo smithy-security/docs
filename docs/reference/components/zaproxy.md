@@ -3,7 +3,6 @@ sidebar_custom_props:
   icon: "/img/components/zap.svg"
 title: 'ZAP'
 description: 'Scanner that runs the Open Source DAST ZAP.'
-sidebar_position: 2
 ---
 
 # ZAP
