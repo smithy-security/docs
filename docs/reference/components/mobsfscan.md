@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-   icon: "/img/components/mobsf.svg"
+  icon: "/img/components/mobsf.svg"
 title: 'MobSF Scan'
 description: 'SAST Scanner for mobile applications.'
 sideba\_position: 5
@@ -19,7 +19,7 @@ MobSF Scan.
 
 ```yaml
 # file: ./my-workflow/workflow.yaml
-description: Nancy based workflow
+description: mobsfscan workflow
 name: mobsfscan
 components:
   - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4

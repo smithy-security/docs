@@ -19,10 +19,10 @@ MobSF. It can scan APK and Swift IPA files from an artefact target.
 
 ```yaml
 # file: ./my-workflow/workflow.yaml
-description: Nancy based workflow
+description: mobsf workflow
 name: mobsfscan
 components:
-  - component: ghcr.io/smithy-security/smithy/images/components/targets/git-clone:v1.3.4
+  - component: ghcr.io/smithy-security/smithy/images/components/targets/source-code-artifact:v0.1.0
   - component: ghcr.io/smithy-security/smithy/manifests/components/scanners/mobsf:v0.0.4
   - component: ghcr.io/smithy-security/smithy/manifests/components/enrichers/custom-annotation:v0.1.2
   - component: ghcr.io/smithy-security/smithy/manifests/components/reporters/json-logger:v1.0.2
