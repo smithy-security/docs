@@ -61,49 +61,13 @@ You will need:
 - your bitbucket username. Find that in your Bitbucket account page.
 - an HTML token. Follow the instructions below to get one.
 
-### To get an HTML token for Bitbucket
+### To get a token for Bitbucket
 
-Getting an HTML token from Bitbucket is done in a couple of steps:
-
-1. Go to
-   `https://bitbucket.org/{workspace_name}/workspace/settings/api` to create
-   an OAuth consumer (replace
-   `{workspace_name}` with your BitBucket workplace name).
-2. Set the Callback URL to
-   `http://localhost:8976` (doesn't need to be a real server there)
-3. Select permissions: repository -> read
-4. Submitting this page will return give you a Consumer's key and a secret. Note them down, because you'll need them later.
-5. Use the Consumer's Key as a
-   `{client_id}` and open the following URL in the browser:  
-   `https://bitbucket.org/site/oauth2/authorize?client_id={client_id}&response_type=code`
-6. After you press "Grant access" in the browser it will redirect you to
-   `http://localhost:8976?code={CODE}`
-   Take a note of that code in the URL, where it redirected you to.
-7. Run this curl command in your terminal
-   (replace `{client_id}` with you consumer's Key and
-   `{client_secret}` with your consumer's Secret from the previous step):
-
-```
-curl -X POST -u "{client_id}:{client_secret}" \
-https://bitbucket.org/site/oauth2/access_token \
--d grant_type=authorization_code \
--d code={code}
-```
-
-8. You should receive similar JSON in response
-
-```json
-{
-    "access_token": <access_token>,
-    "scopes": "repository",
-    "token_type": "bearer",
-    "expires_in": 7200,
-    "state": "authorization_code",
-    "refresh_token": <refresh_token>
-}
-```
-
-9. Copy the Access token. Use it as a token for the Advanced Git Trigger in the SaaS. You can save it as a secret.
+1. Go to you're repo's Settings > Access tokens
+2. Issue a new token with read permissions for the repo
+3. Copy the token and save it in your Smithy secrets
+4. In the Smithy Advanced Git Trigger, use
+   `x-token-auth` as the username and the token as the password
 
 ## UI Settings
 
